@@ -86,7 +86,7 @@ $$
 \vec r\times(\vec r\times\dot{\vec r})= (\vec r\cdot\dot{\vec r})\vec r - r^{2}\dot{\vec r}
 $$
 
-And using the identity $\vec r \cdot \dot{\vec r}=r\dot r$(See @sec-appendix ), we get:
+And using the identity $\vec r \cdot \dot{\vec r}=r\dot r$(See [@sec-rrdot] ), we get:
 
 $$ 
 \vec r\times(\vec r\times\dot{\vec r})= (r\dot r)\vec r - r^{2}\dot{\vec r} 

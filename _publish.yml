@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 658ca44f-52d7-45b8-8ba0-b51fc8d27b64
+      url: https://r16srihari.quarto.pub/test

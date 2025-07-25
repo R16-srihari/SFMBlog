@@ -1,0 +1,30 @@
+# Newton's law of gravitation
+
+Newton formulated that the gravitational force between two point masses is directly proportional to the product of their masses and inversely proportional to the square of the distance between them (inverse square law):
+
+$$
+\vec{F} \propto \frac{m_1 m_2}{r^2} 
+$$
+
+## How did Newton arrive at the inverse square law?
+
+Newton deduced the inverse square law through a combination of Kepler’s empirical laws, geometrical analysis, and physical intuition:
+
+-   Kepler, building on **Tycho Brahe**’s detailed astronomical data, established these laws:
+
+    -   **1st Law**: Planets move in elliptical orbits with the Sun at one focus.
+
+    -   **2nd Law**: The line joining a planet and the Sun sweeps out equal areas in equal time.
+
+    -   **3rd Law**: The square of a planet’s orbital period is proportional to the cube of its semi-major axis: $T^2\propto r^3$
+
+-   Newton inferred that the force must be a **central force**—pointing toward the Sun—because Kepler’s Second Law (the area law) states that a planet sweeps out equal areas in equal time. This only happens if the torque about the Sun is zero, which in turn implies that the force has no component perpendicular to the radius vector. Therefore, the force must always point along the line joining the planet and the Sun—making it a central force.
+
+-   **Deriving the inverse-square relationship:** Starting with Kepler's Third law: $T^2 \propto r^3 \Rightarrow \left(\frac{2\pi r}{v}\right)^2 \propto r^3 \Rightarrow v^2 \propto \frac{1}{r} \Rightarrow a= \frac{v^2}{r} \propto \frac{1}{r^2}$ This showed Newton that the acceleration required to keep a planet in orbit must follow an inverse-square law
+
+-   To test the universality of this law, Newton compared the gravitational acceleration near Earth’s surface ( $a_E\approx 9.81 m/s^2$) with the centripetal acceleration needed to keep the Moon in its orbit using the following measurements to calculate the velocity in its orbit:
+
+    -   The Moon's distance from the Earth: about 60 Earth radii (or 384,400 km).
+    -   And the orbital period was around 27.3 days.
+
+    And he found: $\frac{a_E}{a_M}\approx \left(\frac{r_M}{r_E} \right)^2$ . This confirmed that the same law governed both falling of objects near Earth as well as orbiting moons.

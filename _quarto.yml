@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "Orbital Mechanics: Keplerian model"
+  author: "Srihari S"
+  date: today
+  description: "A comprehensive guide to the Keplerian model of orbital mechanics"
+  chapters:
+    - index.qmd
+    - chapter_01.qmd
+    - chapter_02.qmd
+    - appendix.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+  pdf:
+    documentclass: scrreprt
+
+
+

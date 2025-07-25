@@ -1,0 +1,29 @@
+# Appendix {.unnumbered #sec-appendix}
+
+## Table of equations
+
+| Quantity | Equation |
+|-------------------------|-----------------------------------------------|
+| Ellipse | $r=\dfrac{p}{1+e\cos\theta}$ |
+| Area law | $\dot A=\frac12 r^{2}\dot\theta =\frac{h}{2}= \text{const}$ |
+| Harmonic law | $T^{2}\propto a^{3}$ |
+| Gravity | $\vec F_{21} = -\dfrac{Gm_{1}m_{2}}{r^{2}}\hat{u_r}$ |
+| Reduced EoM | $\ddot{\vec r}=-\dfrac{\mu}{r^{3}}\vec r$ |
+| Specific angular momentum | $\vec h=\vec r\times\dot{\vec r}$ |
+| Laplace–Runge–Lenz vector | $\vec e=\dfrac{\dot{\vec r}\times\vec h}{\mu}-\dfrac{\vec r}{r}$ |
+
+## Identities derivation
+
+### 1. $\vec{r}\cdot \dot{\vec{r}}=r\dot{r}$ {.unnumbered}
+
+We know that: $\vec{r}\cdot\vec{r}=r^2$. Then : $$
+\frac{d}{dt}(\vec{r} \cdot \vec{r})=2r \frac{dr}{dt}=2r\dot{r}
+$$
+
+But,
+
+$$
+\frac{d}{dt}(\vec r\cdot \vec r)= \vec r\cdot \frac{d\vec r}{dt}+\frac{d\vec r}{dt}\cdot \vec r= 2\vec r\cdot \frac{d\vec r}{dt}=2\vec r\cdot \dot{\vec r}
+$$
+
+Hence: $$\boxed{\vec r \cdot\dot{\vec r}=r\dot r}$$

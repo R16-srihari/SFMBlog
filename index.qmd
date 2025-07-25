@@ -1,0 +1,3 @@
+# Preface {.unnumbered}
+
+This book aims to provide a comprehensive guide to the Keplerian model of orbital mechanics, covering the fundamental principles and equations governing the motion of celestial bodies. We will explore the historical context of orbital mechanics, starting with the work of Johannes Kepler and Isaac Newton, and progressing to modern applications in astrodynamics and space exploration.

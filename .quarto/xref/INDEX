@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "a94e489d"
+  },
+  "intro.qmd": {
+    "intro.html": "1e9b41d0"
+  },
+  "chapter_01.qmd": {
+    "chapter_01.html": "473381ea"
+  },
+  "chapter_02.qmd": {
+    "chapter_02.html": "0a2e6e5d"
+  },
+  "summary.qmd": {
+    "summary.html": "a607cd8b"
+  },
+  "appendix.qmd": {
+    "appendix.html": "2fd71125"
+  },
+  "references.qmd": {
+    "references.html": "863234bf"
+  }
+}

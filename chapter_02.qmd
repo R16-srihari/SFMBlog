@@ -95,13 +95,13 @@ $$ {#eq-rcrossrcrossrdot}
 Inserting @eq-rcrossrcrossrdot into @eq-init :
 
 $$
-\frac{d}{dt}(\dot{\vec r}\times \vec h)=- \frac{\mu}{r^3}\left[(r \dot{r})\vec r - r^2 \dot{\vec r}\right]=-\mu \left[\frac{\dot r \vec r-r\dot{\vec r}}{r^2}\right]
+\frac{d}{dt}(\dot{\vec r}\times \vec h)=- \frac{\mu}{r^3}\left[(r \dot{r})\vec r - r^2 \dot{\vec r}\right]=-\mu \left[\frac{\dot r \vec r-r\dot{\vec{r}}}{r^2}\right]
 $$ {#eq-six}
 
 But ,
 
 $$
-\frac{d}{dt}\left(\frac{\vec r}{r}\right)= \frac{r\dot{\vec r}-\dot r\vec r}{r^2}=-\frac{\dot r\vec r-r\dot{\vec r}}{r^2}
+\frac{d}{dt}\left(\frac{\vec r}{r}\right)= \frac{r\dot{\vec r}-\dot r\vec r}{r^2}=-\frac{\dot r\vec r-r\dot{\vec{r}}}{r^2}
 $$
 
 substituting the above into @eq-six;
@@ -145,3 +145,11 @@ $$
 $$
 
 ## Two body problem simulation
+
+::: {.content-visible when-format="html"}
+![Simulation of Two body problem (A binary star system of two suns)](binary_3d_final.gif){width="633"}
+:::
+
+::: {.content-visible when-format="pdf"}
+![Simulation of Two body problem (A binary star system of two suns)](binary_3d_final.png){width="466"}
+:::

@@ -4,7 +4,17 @@
     "href": "index.html",
     "title": "Orbital Mechanics: Keplerian model",
     "section": "",
-    "text": "Preface\nThis book aims to provide a comprehensive guide to the Keplerian model of orbital mechanics, covering the fundamental principles and equations governing the motion of celestial bodies. We will explore the historical context of orbital mechanics, starting with the work of Johannes Kepler and Isaac Newton, and progressing to modern applications in astrodynamics and space exploration.",
+    "text": "Preface\nThis book aims to provide a comprehensive guide to the Keplerian model of orbital mechanics, covering the fundamental principles and equations governing the motion of celestial bodies. We will explore the historical context of orbital mechanics, starting with the work of Johannes Kepler and Isaac Newton, and progressing to model various systems such as the two body system and orbit maneuvers later on.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#current-chapters",
+    "href": "index.html#current-chapters",
+    "title": "Orbital Mechanics: Keplerian model",
+    "section": "Current chapters",
+    "text": "Current chapters\n\nChapter 1: Introduces Newton’s Laws of gravitation and an appreciation of the work behind the derivation of the law\nChapter 2: Derivation of equations of motion in a two-body problem, introduces us to eccentricity of orbit, and derives the orbit equation.",
     "crumbs": [
       "Preface"
     ]
@@ -14,17 +24,37 @@
     "href": "chapter_01.html",
     "title": "1  Newton’s law of gravitation",
     "section": "",
-    "text": "1.1 How did Newton arrive at the inverse square law?\nNewton formulated that the gravitational force between two point masses is directly proportional to the product of their masses and inversely proportional to the square of the distance between them (inverse square law):\n\\[\n\\vec{F} \\propto \\frac{m_1 m_2}{r^2}\n\\]\nNewton deduced the inverse square law through a combination of Kepler’s empirical laws, geometrical analysis, and physical intuition:",
+    "text": "1.1 Kepler’s Laws of planetary motion\nNewton formulated that the gravitational force between two point masses is directly proportional to the product of their masses and inversely proportional to the square of the distance between them (which is known as the inverse square law).\n\\[\n\\vec{F} \\propto \\frac{m_1 m_2}{r^2}\\hat{r}\\quad\\quad \\text{where } \\vec{F} = \\text{gravitational force}, m_1, m_2 = \\text{masses of the objects}, r = \\text{distance between the objects}\n\\]\nWhile the equation is enough to know to contemplate rest of the Keplerian model of orbital mechanics, one might be curious as to as to how did Newton arrive this formulation. We answer that in the following sections taking the case of planetary orbits around the Sun.\nKepler, building on Tycho Brahe’s detailed astronomical data, established these laws:",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Newton's law of gravitation</span>"
     ]
   },
   {
-    "objectID": "chapter_01.html#how-did-newton-arrive-at-the-inverse-square-law",
-    "href": "chapter_01.html#how-did-newton-arrive-at-the-inverse-square-law",
+    "objectID": "chapter_01.html#keplers-laws-of-planetary-motion",
+    "href": "chapter_01.html#keplers-laws-of-planetary-motion",
     "title": "1  Newton’s law of gravitation",
     "section": "",
-    "text": "Kepler, building on Tycho Brahe’s detailed astronomical data, established these laws:\n\n1st Law: Planets move in elliptical orbits with the Sun at one focus.\n2nd Law: The line joining a planet and the Sun sweeps out equal areas in equal time.\n3rd Law: The square of a planet’s orbital period is proportional to the cube of its semi-major axis: \\(T^2\\propto r^3\\)\n\nNewton inferred that the force must be a central force—pointing toward the Sun—because Kepler’s Second Law (the area law) states that a planet sweeps out equal areas in equal time. This only happens if the torque about the Sun is zero, which in turn implies that the force has no component perpendicular to the radius vector. Therefore, the force must always point along the line joining the planet and the Sun—making it a central force.\nDeriving the inverse-square relationship: Starting with Kepler’s Third law: \\(T^2 \\propto r^3 \\Rightarrow \\left(\\frac{2\\pi r}{v}\\right)^2 \\propto r^3 \\Rightarrow v^2 \\propto \\frac{1}{r} \\Rightarrow a= \\frac{v^2}{r} \\propto \\frac{1}{r^2}\\) This showed Newton that the acceleration required to keep a planet in orbit must follow an inverse-square law\nTo test the universality of this law, Newton compared the gravitational acceleration near Earth’s surface ( \\(a_E\\approx 9.81 m/s^2\\)) with the centripetal acceleration needed to keep the Moon in its orbit using the following measurements to calculate the velocity in its orbit:\n\nThe Moon’s distance from the Earth: about 60 Earth radii (or 384,400 km).\nAnd the orbital period was around 27.3 days.\n\nAnd he found: \\(\\frac{a_E}{a_M}\\approx \\left(\\frac{r_M}{r_E} \\right)^2\\) . This confirmed that the same law governed both falling of objects near Earth as well as orbiting moons.",
+    "text": "1st Law: Planets move in elliptical orbits with the Sun at one focus.\n2nd Law: The line joining a planet and the Sun sweeps out equal areas in equal time.\n3rd Law: The square of a planet’s orbital period is proportional to the cube of its semi-major axis.\n\\[\nT^2\\propto r^3 \\quad \\text{ where }T=\\text{ time period, }r=\\text{ distance}\n\\tag{1.1}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Newton's law of gravitation</span>"
+    ]
+  },
+  {
+    "objectID": "chapter_01.html#area-law-implying-central-force",
+    "href": "chapter_01.html#area-law-implying-central-force",
+    "title": "1  Newton’s law of gravitation",
+    "section": "1.2 Area Law implying central force",
+    "text": "1.2 Area Law implying central force\nNewton inferred that the force must be a central force—pointing toward the Sun—because Kepler’s Second Law (the area law) states that a planet sweeps out equal areas in equal time. The following derivation will make it clear as to how.\nWe know,\n\\[\n\\frac{dA}{dt}=\\text{a constant}\n\\]\n\n\n\nDifferential area dA swept out by the relative position vector \\(\\vec{r}\\) during time interval dt. (Fig. 2.9 Curtis 2005)\n\n\nUsing the formula for area of triangle on the infinitesimal area dA, we get\n\\[\ndA=\\frac{1}{2}\\times vdt\\times r\\sin{\\phi}\n\\]\n\\[\n\\Rightarrow dA=\\frac{1}{2} r(v \\sin{\\phi}) dt= \\frac{1}{2} rv_{\\perp} dt\n\\]\nWe know that \\(\\vec{h}=rv_{\\perp} \\hat{h}\\) , where \\(\\vec{h}\\) is the specific relative angular momentum of \\(m_2\\) wrt \\(m_1\\). Hence,\n\\[\n\\boxed{\\frac{dA}{dt}=\\frac{h}{2}= \\text{a constant}}\n\\tag{1.2}\\]\nThe above only happens if the torque about the Sun is zero, which in turn implies that the force has no component perpendicular to the radius vector. Therfore, the force must always point along the line joining the planet and the Sun, making it a central force.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Newton's law of gravitation</span>"
+    ]
+  },
+  {
+    "objectID": "chapter_01.html#deriving-the-inverse-square-relationship",
+    "href": "chapter_01.html#deriving-the-inverse-square-relationship",
+    "title": "1  Newton’s law of gravitation",
+    "section": "1.3 Deriving the inverse-square relationship",
+    "text": "1.3 Deriving the inverse-square relationship\nStarting with Equation 1.1:\n\\[\nT^2 \\propto r^3\n\\]\n\\[\n\\Rightarrow \\left(\\frac{2\\pi r}{v}\\right)^2\\propto r^3\n\\]\n\\[\nv^2\\propto \\frac{1}{r}\n\\]\n\\[\n\\Rightarrow a \\text{(acceleration)}=\\frac{v^2}{r}\\propto \\frac{1}{r^2}\n\\]\nThis showed Newton that the acceleration required to keep a planet in orbit must follow an inverse-square law.\nTo test the universality of this law, Newton compared the gravitational acceleration near Earth’s surface ( \\(a_E\\approx 9.81 m/s^2\\)) with the centripetal acceleration needed to keep the Moon in its orbit using the following measurements to calculate the velocity in its orbit:\n\nThe Moon’s distance from the Earth: about 60 Earth radii (or 384,400 km).\nAnd the orbital period was around 27.3 days.\n\nAnd he found: \\(\\frac{a_E}{a_M}\\approx \\left(\\frac{r_M}{r_E} \\right)^2\\) . This confirmed that the same law governed both falling of objects near Earth as well as orbiting moons.\n\n\n\n\nCurtis, H. D. 2005. Orbital Mechanics: For Engineering Students. Aerospace Engineering. Elsevier Science. https://books.google.co.in/books?id=nEO7lAEACAAJ.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Newton's law of gravitation</span>"
     ]
@@ -44,7 +74,7 @@
     "href": "chapter_02.html#equations-of-motion-for-the-two-body-problem",
     "title": "2  Two Body Problem",
     "section": "",
-    "text": "Diagram of two masses in an inertial frame OXYZ (Curtis (2005))\n\n\n\n2.1.1 Deriving the relative equation of motion\nSubstituting Equation 2.1 and Equation 2.2 to \\(\\vec{r}= \\vec{R}_2-\\vec{R}_1\\):\n\\(\\ddot{\\vec{r}}= -G\\frac{m_1 m_2}{r^3}\\vec{r}\\left(\\frac{1}{m_2}+\\frac{1}{m_1}\\right)= -G \\frac{m_1+m_2}{r^3} \\vec{r}\\)\nLet the gravitational 𝜇 parameter be defined as:\n\\[\n\\mu= G(m_1+m_2)\n\\]\nHence the final equation that we use turns out to be:\n\\[\n\\boxed{\\ddot{\\vec{r}}=-\\frac{\\mu}{r^3}\\vec{r}}\n\\tag{2.3}\\]\n\n\n2.1.2 Motion of Center of Mass\nThe center of mass vector is: \\(\\vec{R}_G=\\frac{m_1\\vec{R}_1+m_2\\vec{R}_2}{m_1+m_2}\\)\nUsing Equation 2.1 and Equation 2.2 :\n\\[\n\\ddot{\\vec{R}}_G= \\frac{m_1\\ddot{\\vec{R}}_1+m_2\\ddot{\\vec{R}}_2}{m_1+m_2}\n\\tag{2.4}\\]\n\\[\n\\ddot{\\vec{R}}_G=\\frac{-G\\frac{m_1m_2}{r^3}\\vec{r}+G\\frac{m_1m_2}{r^3}\\vec{r}}{m_1+m_2}=0\n\\]\nHence proved that the acceleration of center of mass is zero.",
+    "text": "Diagram of two masses in an inertial frame OXYZ (Fig.2.1(a) Curtis (2005))\n\n\n\n2.1.1 Deriving the relative equation of motion\nSubstituting Equation 2.1 and Equation 2.2 to \\(\\vec{r}= \\vec{R}_2-\\vec{R}_1\\):\n\\(\\ddot{\\vec{r}}= -G\\frac{m_1 m_2}{r^3}\\vec{r}\\left(\\frac{1}{m_2}+\\frac{1}{m_1}\\right)= -G \\frac{m_1+m_2}{r^3} \\vec{r}\\)\nLet the gravitational 𝜇 parameter be defined as:\n\\[\n\\mu= G(m_1+m_2)\n\\]\nHence the final equation that we use turns out to be:\n\\[\n\\boxed{\\ddot{\\vec{r}}=-\\frac{\\mu}{r^3}\\vec{r}}\n\\tag{2.3}\\]\n\n\n2.1.2 Motion of Center of Mass\nThe center of mass vector is: \\(\\vec{R}_G=\\frac{m_1\\vec{R}_1+m_2\\vec{R}_2}{m_1+m_2}\\)\nUsing Equation 2.1 and Equation 2.2 :\n\\[\n\\ddot{\\vec{R}}_G= \\frac{m_1\\ddot{\\vec{R}}_1+m_2\\ddot{\\vec{R}}_2}{m_1+m_2}\n\\tag{2.4}\\]\n\\[\n\\ddot{\\vec{R}}_G=\\frac{-G\\frac{m_1m_2}{r^3}\\vec{r}+G\\frac{m_1m_2}{r^3}\\vec{r}}{m_1+m_2}=0\n\\]\nHence proved that the acceleration of center of mass is zero.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Two Body Problem</span>"
     ]
@@ -64,7 +94,7 @@
     "href": "chapter_02.html#orbit-equation-trajectory-under-gravity",
     "title": "2  Two Body Problem",
     "section": "2.3 Orbit Equation (Trajectory Under Gravity)",
-    "text": "2.3 Orbit Equation (Trajectory Under Gravity)\nEquation 2.8 is the vector equation that represents the relative motion of one body wrt the other in two body problem. In order to obtain the scalar form, we take a dot product with \\(\\vec r\\):\n\\[\n\\frac{1}{\\mu}(\\dot{\\vec{r}}\\times \\vec h)\\cdot \\vec r-\\frac{\\vec r\\cdot \\vec r}{r}=\\vec e\\cdot \\vec r\n\\]\nUsing the identity \\(\\vec a \\cdot (\\vec b \\times \\vec c)=(\\vec a \\times \\vec b)\\cdot \\vec c\\);\n\\[\n\\frac{1}{\\mu}\\underbrace{(\\vec r \\times \\dot{\\vec r})}_{\\vec h}\\cdot \\vec h- \\frac{\\vec r\\cdot\\vec r}{r}=\\vec e\\cdot\\vec r\n\\]\n\\[\n\\frac{h^2}{\\mu}-r=re\\cos{\\theta} \\text{ where } \\theta \\text{ is the true anomaly angle }\n\\]\n\n\n\nThe true anomaly \\(\\theta\\) is the angle between the eccentricity vector \\(\\vec{e}\\) and the position vector \\(\\vec{r}\\).\n\n\nHence the final equation of orbit will turn out to be as follows:\n\\[\n\\boxed{r=\\frac{\\frac{h^2}{\\mu}}{1+e\\cos{\\theta}}}\n\\]",
+    "text": "2.3 Orbit Equation (Trajectory Under Gravity)\nEquation 2.8 is the vector equation that represents the relative motion of one body wrt the other in two body problem. In order to obtain the scalar form, we take a dot product with \\(\\vec r\\):\n\\[\n\\frac{1}{\\mu}(\\dot{\\vec{r}}\\times \\vec h)\\cdot \\vec r-\\frac{\\vec r\\cdot \\vec r}{r}=\\vec e\\cdot \\vec r\n\\]\nUsing the identity \\(\\vec a \\cdot (\\vec b \\times \\vec c)=(\\vec a \\times \\vec b)\\cdot \\vec c\\);\n\\[\n\\frac{1}{\\mu}\\underbrace{(\\vec r \\times \\dot{\\vec r})}_{\\vec h}\\cdot \\vec h- \\frac{\\vec r\\cdot\\vec r}{r}=\\vec e\\cdot\\vec r\n\\]\n\\[\n\\frac{h^2}{\\mu}-r=re\\cos{\\theta} \\text{ where } \\theta \\text{ is the true anomaly angle }\n\\]\n\n\n\nThe true anomaly \\(\\theta\\) is the angle between the eccentricity vector \\(\\vec{e}\\) and the position vector \\(\\vec{r}\\) (See Fig. 2.10 Curtis (2005))\n\n\nHence the final equation of orbit will turn out to be as follows:\n\\[\n\\boxed{r=\\frac{\\frac{h^2}{\\mu}}{1+e\\cos{\\theta}}}\n\\]",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Two Body Problem</span>"
     ]
@@ -74,7 +104,7 @@
     "href": "chapter_02.html#two-body-problem-simulation",
     "title": "2  Two Body Problem",
     "section": "2.4 Two body problem simulation",
-    "text": "2.4 Two body problem simulation\n\n\n\nSimulation of Two body problem (A binary star system of two suns)\n\n\n\n\n\n\nCurtis, H. D. 2005. Orbital Mechanics: For Engineering Students. Aerospace Engineering. Elsevier Science. https://books.google.co.in/books?id=nEO7lAEACAAJ.",
+    "text": "2.4 Two body problem simulation\nBelow is a simulation of the two body problem with an example: a binary star system of two Suns whose masses are equal.\n\n\n\nSimulation of Two body problem (A binary star system of two suns)\n\n\n\n\n\n\nCurtis, H. D. 2005. Orbital Mechanics: For Engineering Students. Aerospace Engineering. Elsevier Science. https://books.google.co.in/books?id=nEO7lAEACAAJ.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Two Body Problem</span>"
     ]

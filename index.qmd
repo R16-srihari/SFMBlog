@@ -1,3 +1,8 @@
 # Preface {.unnumbered}
 
-This book aims to provide a comprehensive guide to the Keplerian model of orbital mechanics, covering the fundamental principles and equations governing the motion of celestial bodies. We will explore the historical context of orbital mechanics, starting with the work of Johannes Kepler and Isaac Newton, and progressing to modern applications in astrodynamics and space exploration.
+This book aims to provide a comprehensive guide to the Keplerian model of orbital mechanics, covering the fundamental principles and equations governing the motion of celestial bodies. We will explore the historical context of orbital mechanics, starting with the work of Johannes Kepler and Isaac Newton, and progressing to model various systems such as the two body system and orbit maneuvers later on.
+
+## Current chapters
+
+-   **Chapter 1:** Introduces Newton's Laws of gravitation and an appreciation of the work behind the derivation of the law
+-   **Chapter 2:** Derivation of equations of motion in a two-body problem, introduces us to eccentricity of orbit, and derives the orbit equation.

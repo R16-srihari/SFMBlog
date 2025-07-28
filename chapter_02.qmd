@@ -14,7 +14,7 @@ $$ {#eq-f21}
 
 where $\vec{r}= \vec{R}_2-\vec{R}_1$.
 
-![Diagram of two masses in an inertial frame *OXYZ* (@curtis2005orbital)](fig2_1.jpeg){width="253"}
+![Diagram of two masses in an inertial frame *OXYZ* (Fig.2.1(a) @curtis2005orbital)](fig2_1.jpeg){width="253"}
 
 ### Deriving the relative equation of motion
 
@@ -136,7 +136,7 @@ $$
 \frac{h^2}{\mu}-r=re\cos{\theta} \text{ where } \theta \text{ is the true anomaly angle }
 $$
 
-![The true anomaly $\theta$ is the angle between the eccentricity vector $\vec{e}$ and the position vector $\vec{r}$.](fig2_2.jpeg){width="231"}
+![The true anomaly $\theta$ is the angle between the eccentricity vector $\vec{e}$ and the position vector $\vec{r}$ (See Fig. 2.10 @curtis2005orbital)](fig2_2.jpeg){width="231"}
 
 Hence the final equation of orbit will turn out to be as follows:
 
@@ -145,6 +145,8 @@ $$
 $$
 
 ## Two body problem simulation
+
+Below is a simulation of the two body problem with an example: a binary star system of two Suns whose masses are equal.
 
 ::: {.content-visible when-format="html"}
 ![Simulation of Two body problem (A binary star system of two suns)](binary_3d_final.gif){width="633"}

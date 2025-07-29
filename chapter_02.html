@@ -368,12 +368,12 @@ window.Quarto = {
   <ul>
   <li><a href="#equations-of-motion-for-the-two-body-problem" id="toc-equations-of-motion-for-the-two-body-problem" class="nav-link active" data-scroll-target="#equations-of-motion-for-the-two-body-problem"><span class="header-section-number">2.1</span> Equations of Motion for the Two body problem</a>
   <ul class="collapse">
-  <li><a href="#deriving-the-relative-equation-of-motion" id="toc-deriving-the-relative-equation-of-motion" class="nav-link" data-scroll-target="#deriving-the-relative-equation-of-motion"><span class="header-section-number">2.1.1</span> Deriving the relative equation of motion</a></li>
+  <li><a href="#derivation-of-the-relative-equation-of-motion" id="toc-derivation-of-the-relative-equation-of-motion" class="nav-link" data-scroll-target="#derivation-of-the-relative-equation-of-motion"><span class="header-section-number">2.1.1</span> Derivation of the relative equation of motion</a></li>
   <li><a href="#motion-of-center-of-mass" id="toc-motion-of-center-of-mass" class="nav-link" data-scroll-target="#motion-of-center-of-mass"><span class="header-section-number">2.1.2</span> Motion of Center of Mass</a></li>
   </ul></li>
   <li><a href="#sec-angularmom" id="toc-sec-angularmom" class="nav-link" data-scroll-target="#sec-angularmom"><span class="header-section-number">2.2</span> Angular momentum in two body problem</a>
   <ul class="collapse">
-  <li><a href="#eccentricity-of-orbit-from-laplace-runge-lenz-vector" id="toc-eccentricity-of-orbit-from-laplace-runge-lenz-vector" class="nav-link" data-scroll-target="#eccentricity-of-orbit-from-laplace-runge-lenz-vector"><span class="header-section-number">2.2.1</span> Eccentricity of orbit from Laplace Runge Lenz vector</a></li>
+  <li><a href="#eccentricity-of-orbit-from-laplace-runge-lenz-vector" id="toc-eccentricity-of-orbit-from-laplace-runge-lenz-vector" class="nav-link" data-scroll-target="#eccentricity-of-orbit-from-laplace-runge-lenz-vector"><span class="header-section-number">2.2.1</span> Eccentricity of orbit from Laplace-Runge-Lenz vector</a></li>
   </ul></li>
   <li><a href="#orbit-equation-trajectory-under-gravity" id="toc-orbit-equation-trajectory-under-gravity" class="nav-link" data-scroll-target="#orbit-equation-trajectory-under-gravity"><span class="header-section-number">2.3</span> Orbit Equation (Trajectory Under Gravity)</a></li>
   <li><a href="#two-body-problem-simulation" id="toc-two-body-problem-simulation" class="nav-link" data-scroll-target="#two-body-problem-simulation"><span class="header-section-number">2.4</span> Two body problem simulation</a></li>
@@ -412,15 +412,15 @@ m_1\ddot{\vec{R}}_1=-G\frac{m_1 m_2}{r^3} \vec{r}
 <p><span id="eq-f21"><span class="math display">\[
 m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 \tag{2.2}\]</span></span></p>
-<p>where <span class="math inline">\(\vec{r}= \vec{R}_2-\vec{R}_1\)</span>.</p>
+<p>where <span class="math inline">\(\vec{r}= \vec{R}_2-\vec{R}_1\)</span> the relative position vector between the two masses.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig2_1.jpeg" class="img-fluid figure-img" width="253"></p>
 <figcaption>Diagram of two masses in an inertial frame <em>OXYZ</em> (Fig.2.1(a) <span class="citation" data-cites="curtis2005orbital">Curtis (<a href="references.html#ref-curtis2005orbital" role="doc-biblioref">2005</a>)</span>)</figcaption>
 </figure>
 </div>
-<section id="deriving-the-relative-equation-of-motion" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="deriving-the-relative-equation-of-motion"><span class="header-section-number">2.1.1</span> Deriving the relative equation of motion</h3>
+<section id="derivation-of-the-relative-equation-of-motion" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="derivation-of-the-relative-equation-of-motion"><span class="header-section-number">2.1.1</span> Derivation of the relative equation of motion</h3>
 <p>Substituting <a href="#eq-f12" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> and <a href="#eq-f21" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> to <span class="math inline">\(\vec{r}= \vec{R}_2-\vec{R}_1\)</span>:</p>
 <p><span class="math inline">\(\ddot{\vec{r}}= -G\frac{m_1 m_2}{r^3}\vec{r}\left(\frac{1}{m_2}+\frac{1}{m_1}\right)= -G \frac{m_1+m_2}{r^3} \vec{r}\)</span></p>
 <p>Let the gravitational 𝜇 parameter be defined as:</p>
@@ -461,7 +461,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 \]</span></p>
 <p>From the <a href="#eq-relmotion" class="quarto-xref">Equation&nbsp;<span>2.3</span></a>, we see that <span class="math inline">\(\ddot{\vec{r}} \parallel \vec{r}\)</span> . Hence <span class="math inline">\(\frac{d\vec{h}}{dt}=0 \Rightarrow \vec{h}\)</span> is conserved.</p>
 <section id="eccentricity-of-orbit-from-laplace-runge-lenz-vector" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="eccentricity-of-orbit-from-laplace-runge-lenz-vector"><span class="header-section-number">2.2.1</span> Eccentricity of orbit from Laplace Runge Lenz vector</h3>
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="eccentricity-of-orbit-from-laplace-runge-lenz-vector"><span class="header-section-number">2.2.1</span> Eccentricity of orbit from Laplace-Runge-Lenz vector</h3>
 <p>Differentiating <span class="math inline">\(\dot {\vec r} \times \vec h\)</span>:</p>
 <p><span id="eq-init"><span class="math display">\[
 \frac{d}{dt}(\dot{\vec r}\times\vec h)= \ddot{\vec r}\times\vec h + \dot{\vec r}\times\underbrace{\dot{\vec h}}_{0}= -\frac{\mu}{r^{3}}\vec r\times(\vec r\times\dot{\vec r})
@@ -495,7 +495,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 </section>
 <section id="orbit-equation-trajectory-under-gravity" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="orbit-equation-trajectory-under-gravity"><span class="header-section-number">2.3</span> Orbit Equation (Trajectory Under Gravity)</h2>
-<p><a href="#eq-eccvector" class="quarto-xref">Equation&nbsp;<span>2.8</span></a> is the vector equation that represents the relative motion of one body wrt the other in two body problem. In order to obtain the scalar form, we take a dot product with <span class="math inline">\(\vec r\)</span>:</p>
+<p><a href="#eq-eccvector" class="quarto-xref">Equation&nbsp;<span>2.8</span></a> is the vector equation that represents the orbit of one of the bodies wrt the other in the two body problem. In order to obtain the scalar form, we take a dot product with <span class="math inline">\(\vec r\)</span>:</p>
 <p><span class="math display">\[
 \frac{1}{\mu}(\dot{\vec{r}}\times \vec h)\cdot \vec r-\frac{\vec r\cdot \vec r}{r}=\vec e\cdot \vec r
 \]</span></p>

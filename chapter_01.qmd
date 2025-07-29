@@ -52,7 +52,7 @@ $$ {#eq-dadt}
 
 The above only happens if the torque about the Sun is zero, which in turn implies that the force has no component perpendicular to the radius vector. Therfore, the force must always point along the line joining the planet and the Sun, making it a central force.
 
-## Deriving the inverse-square relationship
+## Derivation of the inverse-square relationship
 
 Starting with @eq-thirdlaw:
 

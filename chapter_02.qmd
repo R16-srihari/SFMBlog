@@ -5,18 +5,18 @@
 Let $\vec{R}_1$ and $\vec{R}_2$ denote the position vectors of masses $m_1$ and $m_2$ in an inertial reference frame. According to Newton’s Second Law and the law of gravitation:
 
 $$
-m_1\ddot{\vec{R}}_1=-G\frac{m_1 m_2}{r^3} \vec{r}
+m_1\ddot{\vec{R}}_1=-G\frac{m_1 m_2}{r^3} \vec{r} 
 $$ {#eq-f12}
 
 $$
 m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 $$ {#eq-f21}
 
-where $\vec{r}= \vec{R}_2-\vec{R}_1$.
+where $\vec{r}= \vec{R}_2-\vec{R}_1$ the relative position vector between the two masses.
 
 ![Diagram of two masses in an inertial frame *OXYZ* (Fig.2.1(a) @curtis2005orbital)](fig2_1.jpeg){width="253"}
 
-### Deriving the relative equation of motion
+### Derivation of the relative equation of motion
 
 Substituting @eq-f12 and @eq-f21 to $\vec{r}= \vec{R}_2-\vec{R}_1$:
 
@@ -72,7 +72,7 @@ $$
 
 From the @eq-relmotion, we see that $\ddot{\vec{r}} \parallel \vec{r}$ . Hence $\frac{d\vec{h}}{dt}=0 \Rightarrow \vec{h}$ is conserved.
 
-### Eccentricity of orbit from Laplace Runge Lenz vector
+### Eccentricity of orbit from Laplace-Runge-Lenz vector
 
 Differentiating $\dot {\vec r} \times \vec h$:
 
@@ -120,7 +120,7 @@ where $\vec e$ is the constant of integration and called as the Laplace-Runge-Le
 
 ## Orbit Equation (Trajectory Under Gravity)
 
-@eq-eccvector is the vector equation that represents the relative motion of one body wrt the other in two body problem. In order to obtain the scalar form, we take a dot product with $\vec r$:
+@eq-eccvector is the vector equation that represents the orbit of one of the bodies wrt the other in the two body problem. In order to obtain the scalar form, we take a dot product with $\vec r$:
 
 $$
 \frac{1}{\mu}(\dot{\vec{r}}\times \vec h)\cdot \vec r-\frac{\vec r\cdot \vec r}{r}=\vec e\cdot \vec r

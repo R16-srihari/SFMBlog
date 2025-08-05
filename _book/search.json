@@ -24,7 +24,7 @@
     "href": "chapter_01.html",
     "title": "1  Newton’s law of gravitation",
     "section": "",
-    "text": "1.1 Kepler’s Laws of planetary motion\nNewton formulated that the gravitational force between two point masses is directly proportional to the product of their masses and inversely proportional to the square of the distance between them (which is known as the inverse square law).\n\\[\n|\\vec{F}| \\propto \\frac{m_1 m_2}{r^2}\n\\tag{1.1}\\]\nWhere: \\(\\vec{F}\\) is the force acting on one of the bodies from the other, \\(m_1, m_2\\) are the masses of the bodies and \\(\\vec r\\) is the vector from mass \\(m_1\\) to \\(m_2\\) whose magnitude is \\(r\\).\nWhile the equation is enough to know to contemplate rest of the Keplerian model of orbital mechanics, one might be curious as to how did Newton arrive at this formulation. We answer that in the following sections taking the case of planetary orbits around the Sun.\nKepler, building on Tycho Brahe’s detailed astronomical data, established these laws:",
+    "text": "1.1 Kepler’s Laws of planetary motion\nNewton formulated that the gravitational force between two point masses is directly proportional to the product of their masses and inversely proportional to the square of the distance between them (which is known as the inverse square law).\n\\[\n|\\vec{F}| \\propto \\frac{m_1 m_2}{r^2}\n\\tag{1.1}\\]\nWhere: \\(\\vec{F}\\) is the force acting on one of the bodies from the other, \\(m_1, m_2\\) are the masses of the bodies and \\(\\vec r\\) is the vector from mass \\(m_1\\) to \\(m_2\\) whose magnitude is \\(r\\).\nWhile the equation is enough to know to contemplate rest of the Keplerian model of orbital mechanics, one might be curious as to how did Newton arrive at this formulation. We answer that in the following sections taking the case of planetary orbits around the Sun.\nKepler, building on Tycho Brahe’s detailed astronomical data, established these laws:\nNow we will see how each of the above laws helped Newton come to his conclusion.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Newton's law of gravitation</span>"
     ]
@@ -34,7 +34,7 @@
     "href": "chapter_01.html#keplers-laws-of-planetary-motion",
     "title": "1  Newton’s law of gravitation",
     "section": "",
-    "text": "1st Law: Planets move in elliptical orbits with the Sun at one focus.\n2nd Law: The line joining a planet and the Sun sweeps out equal areas in equal time.\n3rd Law: The square of a planet’s orbital period is proportional to the cube of its semi-major axis.\n\\[\nT^2\\propto r^3\n\\tag{1.2}\\]\nWhere \\(T\\) is the time period and \\(r\\) is the distance as mentioned in Equation 1.1 . Now we will see how each of these helped Newton come to his conclusion.",
+    "text": "1st Law: Planets move in elliptical orbits with the Sun at one focus.\n2nd Law: The line joining a planet and the Sun sweeps out equal areas in equal time.\n3rd Law: The square of a planet’s orbital period is proportional to the cube of its semi-major axis.\n\\[\nT^2\\propto r^3\n\\tag{1.2}\\]\nWhere \\(T\\) is the time period and \\(r\\) is the distance as mentioned in Equation 1.1 .",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Newton's law of gravitation</span>"
     ]

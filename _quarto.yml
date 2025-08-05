@@ -20,8 +20,10 @@ format:
     theme:
       light: cosmo
       dark: darkly
-  pdf:
-    documentclass: scrreprt
 
-
+jupyter: 
+  kernelspec: 
+    name: python3
+    display_name: Python 3.12.5
+    language: python
 

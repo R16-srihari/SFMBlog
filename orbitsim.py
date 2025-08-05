@@ -8,7 +8,7 @@ Python 3.8+  (needs numpy, matplotlib)
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D   # noqa: F401 (needed for 3-D plots)
-from matplotlib.animation import FuncAnimation, FFMpegWriter
+from matplotlib.animation import FuncAnimation, FFMpegWriter, PillowWriter
 import os
 # --------------------  physical constants  --------------------
 G = 6.67430e-11      # SI [m^3 kg^-1 s^-2]
@@ -164,7 +164,7 @@ if __name__ == "__main__":
     # integrate 2 full periods so we see several loops
     mu = G*(m1 + m2)
     P  = 2*np.pi * np.sqrt(a**3 / mu) # time period
-    t_end = P
+    t_end = 2*P
     data = simulate_two_body_orbit(m1, m2,
                                    r_periapsis=r_peri,
                                    e=ecc,
@@ -227,13 +227,17 @@ if __name__ == "__main__":
 
         return (body1, body2, trail1, trail2)
 
-    # 4) Build 3-D GIF --------------------------------------------------------
+    # 4) Build 3-D video file --------------------------------------------------------
     ani = FuncAnimation(fig, update,
                         frames=len(t),
                         init_func=init,
                         blit=True,
-                        interval=1000/60)
+                        interval=1000/ 240)
 
-    outfile = "binary_3d_final.mp4"
-    ani.save(outfile, writer=FFMpegWriter(fps=60))
+    
+    outfile = "binary_3d.mp4"
+    ani.save(outfile, writer=FFMpegWriter(fps=240))
     print(f"Saved equal-mass binary animation → {os.path.abspath(outfile)}")
+    
+    
+    plt.show()

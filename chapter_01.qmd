@@ -3,10 +3,12 @@
 Newton formulated that the gravitational force between two point masses is directly proportional to the product of their masses and inversely proportional to the square of the distance between them (which is known as the inverse square law).
 
 $$
-\vec{F} \propto \frac{m_1 m_2}{r^2}\hat{r}\quad\quad \text{where } \vec{F} = \text{gravitational force}, m_1, m_2 = \text{masses of the objects}, r = \text{distance between the objects}
-$$
+|\vec{F}| \propto \frac{m_1 m_2}{r^2}
+$$ {#eq-newtonlaw}
 
-While the equation is enough to know to contemplate rest of the Keplerian model of orbital mechanics, one might be curious as to as to how did Newton arrive this formulation. We answer that in the following sections taking the case of planetary orbits around the Sun.
+Where: $\vec{F}$ is the force acting on one of the bodies from the other, $m_1, m_2$ are the masses of the bodies and $\vec r$ is the vector from mass $m_1$ to $m_2$ whose magnitude is $r$.
+
+While the equation is enough to know to contemplate rest of the Keplerian model of orbital mechanics, one might be curious as to how did Newton arrive at this formulation. We answer that in the following sections taking the case of planetary orbits around the Sun.
 
 ## Kepler's Laws of planetary motion
 
@@ -19,8 +21,12 @@ Kepler, building on [**Tycho Brahe**](https://en.wikipedia.org/wiki/Tycho_Brahe#
 -   **3rd Law**: The square of a planet’s orbital period is proportional to the cube of its semi-major axis.
 
     $$
-    T^2\propto r^3 \quad \text{ where }T=\text{ time period, }r=\text{ distance} 
+    T^2\propto r^3
     $$ {#eq-thirdlaw}
+
+    Where $T$ is the time period and $r$ is the distance as mentioned in @eq-newtonlaw .
+
+Now we will see how each of the above laws helped Newton come to his conclusion.
 
 ## Area Law implying central force
 

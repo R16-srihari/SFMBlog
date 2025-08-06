@@ -130,16 +130,6 @@
     ]
   },
   {
-    "objectID": "appendix.html#identities-derivation",
-    "href": "appendix.html#identities-derivation",
-    "title": "Appendix",
-    "section": "Identities derivation",
-    "text": "Identities derivation\n\n1.\nWe know that: \\(\\vec{r}\\cdot\\vec{r}=r^2\\). Then : \\[\n\\frac{d}{dt}(\\vec{r} \\cdot \\vec{r})=2r \\frac{dr}{dt}=2r\\dot{r}\n\\]\nBut,\n\\[\n\\frac{d}{dt}(\\vec r\\cdot \\vec r)= \\vec r\\cdot \\frac{d\\vec r}{dt}+\\frac{d\\vec r}{dt}\\cdot \\vec r= 2\\vec r\\cdot \\frac{d\\vec r}{dt}=2\\vec r\\cdot \\dot{\\vec r}\n\\]\nHence:\n\n\\[\n\\boxed{\\vec r \\cdot\\dot{\\vec r}=r\\dot r}\n\\]",
-    "crumbs": [
-      "Appendix"
-    ]
-  },
-  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "References",

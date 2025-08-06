@@ -125,6 +125,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -435,7 +436,20 @@ dA=\frac{1}{2}\times vdt\times r\sin{\phi}
 <p><span class="math display">\[
 \Rightarrow dA=\frac{1}{2} r(v \sin{\phi}) dt= \frac{1}{2} rv_{\perp} dt
 \]</span></p>
-<p>We know that <span class="math inline">\(\vec{h}=rv_{\perp} \hat{h}\)</span> , where <span class="math inline">\(\vec{h}\)</span> is the specific relative angular momentum of <span class="math inline">\(m_2\)</span> wrt <span class="math inline">\(m_1\)</span>. Hence,</p>
+<p>We know that <span class="math inline">\(\vec{h}=rv_{\perp} \hat{h}\)</span> , where <span class="math inline">\(\vec{h}\)</span> is the specific relative angular momentum of <span class="math inline">\(m_2\)</span> wrt <span class="math inline">\(m_1\)</span>.</p>
+<div class="side-note callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Angular momentum is defined as: <span class="math display">\[      \vec{H}=\vec{r}\times (m\vec{v})  \]</span> <span class="math display">\[     \vec{h}=\vec{r}\times \vec{v}=rv\sin{\phi} \hat{h} \]</span> where <span class="math inline">\(\phi\)</span> is the angle between the position vector <span class="math inline">\(\vec{r}\)</span> and the velocity vector <span class="math inline">\(\vec{v}\)</span>, and <span class="math inline">\(\hat{h}=\hat{r}\times \hat{v}\)</span> is the unit vector perpendicular to the plane of motion.</p>
+</div>
+</div>
 <p><span id="eq-dadt"><span class="math display">\[
 \boxed{\frac{dA}{dt}=\frac{h}{2}= \text{a constant}}
 \tag{1.3}\]</span></span></p>
@@ -459,10 +473,44 @@ v^2\propto \frac{1}{r}
 <p>This showed Newton that the acceleration required to keep a planet in orbit must follow an inverse-square law.</p>
 <p>To test the universality of this law, Newton compared the gravitational acceleration near Earth’s surface ( <span class="math inline">\(a_E\approx 9.81 m/s^2\)</span>) with the centripetal acceleration needed to keep the Moon in its orbit using the following measurements to calculate the velocity in its orbit:</p>
 <ul>
-<li>The Moon’s distance from the Earth: about 60 Earth radii (or 384,400 km).</li>
-<li>And the orbital period was around 27.3 days.</li>
+<li><p>The Moon’s distance from the Earth: (calculated using parallax method) about 60 Earth radii (or 384,400 km).</p>
+<div class="side-note callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>parallax method</strong> determines the Moon’s distance by observing its apparent shift against background stars from two distant points on Earth. This angular difference, called the <strong>parallax angle</strong> (p), relates to the distance(<span class="math inline">\(D\)</span>) by:</p>
+<p><span class="math display">\[
+D=\frac{R_E}{\sin{p}}
+\]</span></p>
+<p>Where <span class="math inline">\(R_E\)</span> is the radius of the Earth (see below).</p>
+</div>
+</div>
+<div id="note-earthradius" class="side-note callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Determination of Earth’s Radius
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Earth’s radius was first scientifically estimated by <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Eratosthenes/" id="ref-erastothenes"><strong>Eratosthenes</strong></a> <strong>(~240 BCE)</strong>, who used the difference in the Sun’s angle between Syene and Alexandria at noon on the summer solstice. By measuring this angular difference (~7.2°) and knowing the distance between the two cities, he calculated Earth’s circumference to be about 40,000 km, yielding a radius of approximately <strong>6,370 km</strong>.</p>
+<p>By <strong>Newton’s time</strong>, more precise measurements came from land-based triangulation. In the 1670s, <a href="https://www.wikilifestory.in/2025/03/jean-picard.html?utm_source=chatgpt.com"><strong>Jean Picard</strong></a> used observations of a <a href="https://rinconeducativo.org/en/recursos-educativos/jean-picard-first-give-exact-measurement-radius-earth/">meridian arc</a> near Paris to estimate Earth’s radius as <strong>6,328 km</strong>, which Newton used in his gravitational calculations.</p>
+</div>
+</div></li>
+<li><p>And the orbital period was around 27.3 days.</p></li>
 </ul>
-<p>And he found: <span class="math inline">\(\frac{a_E}{a_M}\approx \left(\frac{r_M}{r_E} \right)^2\)</span> . This confirmed that the same law governed both falling of objects near Earth as well as orbiting moons.</p>
+<p>And he found:</p>
+<p><span class="math display">\[\frac{a_E}{a_M}\approx \left(\frac{r_M}{r_E}\right)^2
+\]</span> where <span class="math inline">\(a_E\)</span> is the acceleration of an object on Earth, <span class="math inline">\(a_M\)</span> the acceleration of the moon due to Earth, <span class="math inline">\(r_M\)</span> the distance of the Moon from the center of the Earth and <span class="math inline">\(r_E\)</span> the radius of Earth which is distance of the object on Earth from the center of the Earth. This confirmed that the same law governed both falling of objects near Earth as well as orbiting moons.</p>
+
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

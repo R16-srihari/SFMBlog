@@ -160,6 +160,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -505,7 +506,26 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 <p><span class="math display">\[
 \vec r\times(\vec r\times\dot{\vec r})= (\vec r\cdot\dot{\vec r})\vec r - r^{2}\dot{\vec r}
 \]</span></p>
-<p>And using the identity <span class="math inline">\(\vec r \cdot \dot{\vec r}=r\dot r\)</span>(See <a href="appendix.html#sec-rrdot" class="quarto-xref"><span>Section 2.1</span></a> ), we get:</p>
+<p>And using the identity <span class="math inline">\(\vec r \cdot \dot{\vec r}=r\dot r\)</span>, we get:</p>
+<div class="side-note callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="math inline">\(\vec r \cdot \dot{\vec r}=r\dot r\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We know that:<span class="math display">\[\vec r \cdot\vec r=r^2\]</span></p>
+<p>Then:<span class="math display">\[\frac{d}{dt}(\vec r\cdot \vec r)=2r\frac{dr}{dt}=2r\dot r
+\]</span></p>
+<p>But,<span class="math display">\[\frac{d}{dt}(\vec r \cdot \vec r)=\vec r\cdot \frac{d\vec r}{dt}+\frac{d\vec r}{dt}\cdot \vec r=2\vec r\cdot \frac{d\vec r}{dt}=2\vec r\cdot \dot{\vec r}\]</span></p>
+<p>Hence:<span class="math display">\[
+\boxed{\vec r\cdot\dot{\vec r}=r\dot r}
+\]</span></p>
+</div>
+</div>
 <p><span id="eq-rcrossrcrossrdot"><span class="math display">\[
 \vec r\times(\vec r\times\dot{\vec r})= (r\dot r)\vec r - r^{2}\dot{\vec r}
 \tag{2.6}\]</span></span></p>
@@ -562,7 +582,7 @@ Click to view the code
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D   <span class="co"># noqa: F401 (needed for 3-D plots)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.animation <span class="im">import</span> FuncAnimation, FFMpegWriter, PillowWriter</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.animation <span class="im">import</span> FuncAnimation, FFMpegWriter<span class="co">#, PillowWriter # (optional, for GIFs)</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------------  physical constants  --------------------</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> <span class="fl">6.67430e-11</span>      <span class="co"># SI [m^3 kg^-1 s^-2]</span></span>
@@ -731,78 +751,137 @@ Click to view the code
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    t  <span class="op">=</span> data[<span class="st">'t'</span>] <span class="co"># time array</span></span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    r1 <span class="op">=</span> data[<span class="st">'r1'</span>] <span class="co"># position of body 1</span></span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    r2 <span class="op">=</span> data[<span class="st">'r2'</span>] <span class="co"># position of body 2</span></span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2) 3-D figure (unchanged) ----------------------------------------------</span></span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">6</span>))</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    ax  <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">'3d'</span>)</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    lim <span class="op">=</span> <span class="fl">1.05</span> <span class="op">*</span> np.<span class="bu">abs</span>(r1).<span class="bu">max</span>()</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="op">-</span>lim, lim)</span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="op">-</span>lim, lim)</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    ax.set_zlim(<span class="op">-</span>lim, lim)</span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'x [m]'</span>)</span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'y [m]'</span>)</span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    ax.set_zlabel(<span class="st">'z [m]'</span>)</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="vs">r'Equal-mass binary </span><span class="kw">(</span><span class="dv">$</span><span class="vs">m_1 = m_2 = 1</span><span class="ch">\t</span><span class="vs">imes10</span><span class="dv">^</span><span class="op">{30}</span><span class="ch">\,</span><span class="dv">$</span><span class="vs">kg</span><span class="kw">)</span><span class="vs">'</span>)</span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    ax.plot([<span class="dv">0</span>], [<span class="dv">0</span>], [<span class="dv">0</span>], <span class="st">'k+'</span>, markersize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    r_rel <span class="op">=</span> r2 <span class="op">-</span> r1  <span class="co"># relative position vector</span></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2) 3-D figure (unchanged) ----------------------------------------------</span></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>    fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">6</span>))</span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    ax  <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">'3d'</span>)</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    lim <span class="op">=</span> <span class="fl">1.05</span> <span class="op">*</span> np.<span class="bu">abs</span>(r1).<span class="bu">max</span>()</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    ax.set_xlim(<span class="op">-</span>lim, lim)</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    ax.set_ylim(<span class="op">-</span>lim, lim)</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    ax.set_zlim(<span class="op">-</span>lim, lim)</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'x [m]'</span>)</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'y [m]'</span>)</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    ax.set_zlabel(<span class="st">'z [m]'</span>)</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="vs">r'Equal-mass binary </span><span class="kw">(</span><span class="dv">$</span><span class="vs">m_1 = m_2 = 1</span><span class="ch">\t</span><span class="vs">imes10</span><span class="dv">^</span><span class="op">{30}</span><span class="ch">\,</span><span class="dv">$</span><span class="vs">kg</span><span class="kw">)</span><span class="vs">'</span>)</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    body1,  <span class="op">=</span> ax.plot([], [], [], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'tab:red'</span>,   markersize<span class="op">=</span><span class="dv">7</span>, label<span class="op">=</span><span class="st">'Star 1'</span>)</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>    body2,  <span class="op">=</span> ax.plot([], [], [], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'tab:green'</span>, markersize<span class="op">=</span><span class="dv">7</span>, label<span class="op">=</span><span class="st">'Star 2'</span>)</span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    trail1, <span class="op">=</span> ax.plot([], [], [], <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'tab:red'</span>,   alpha<span class="op">=</span><span class="fl">0.4</span>, lw<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    trail2, <span class="op">=</span> ax.plot([], [], [], <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'tab:green'</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, lw<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    max_trail <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>    ax.plot([<span class="dv">0</span>], [<span class="dv">0</span>], [<span class="dv">0</span>], <span class="st">'k+'</span>, markersize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>    body1,  <span class="op">=</span> ax.plot([], [], [], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'tab:red'</span>,   markersize<span class="op">=</span><span class="dv">7</span>, label<span class="op">=</span><span class="st">'Star 1'</span>)</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    body2,  <span class="op">=</span> ax.plot([], [], [], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'tab:green'</span>, markersize<span class="op">=</span><span class="dv">7</span>, label<span class="op">=</span><span class="st">'Star 2'</span>)</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>    trail1, <span class="op">=</span> ax.plot([], [], [], <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'tab:red'</span>,   alpha<span class="op">=</span><span class="fl">0.4</span>, lw<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>    trail2, <span class="op">=</span> ax.plot([], [], [], <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'tab:green'</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, lw<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>    ax.legend()</span>
 <span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3) Animation callbacks (same as before) ---------------------------------</span></span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> init():</span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>        body1.set_data([], [])</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>        body1.set_3d_properties([])</span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        body2.set_data([], [])</span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        body2.set_3d_properties([])</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>        trail1.set_data([], [])</span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        trail1.set_3d_properties([])</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        trail2.set_data([], [])</span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>        trail2.set_3d_properties([])</span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (body1, body2, trail1, trail2)</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update(frame):</span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        body1.set_data([r1[frame, <span class="dv">0</span>]], [r1[frame, <span class="dv">1</span>]])</span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>        body1.set_3d_properties([r1[frame, <span class="dv">2</span>]])</span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        body2.set_data([r2[frame, <span class="dv">0</span>]], [r2[frame, <span class="dv">1</span>]])</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        body2.set_3d_properties([r2[frame, <span class="dv">2</span>]])</span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        start <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>        trail1.set_data(r1[start:frame, <span class="dv">0</span>], r1[start:frame, <span class="dv">1</span>])</span>
-<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        trail1.set_3d_properties(r1[start:frame, <span class="dv">2</span>])</span>
-<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        trail2.set_data(r2[start:frame, <span class="dv">0</span>], r2[start:frame, <span class="dv">1</span>])</span>
-<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        trail2.set_3d_properties(r2[start:frame, <span class="dv">2</span>])</span>
-<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (body1, body2, trail1, trail2)</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>    max_trail <span class="op">=</span> <span class="dv">300</span></span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3) Animation callbacks (same as before) ---------------------------------</span></span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> init():</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>        body1.set_data([], [])</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>        body1.set_3d_properties([])</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>        body2.set_data([], [])</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>        body2.set_3d_properties([])</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>        trail1.set_data([], [])</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>        trail1.set_3d_properties([])</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>        trail2.set_data([], [])</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>        trail2.set_3d_properties([])</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (body1, body2, trail1, trail2)</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update(frame):</span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>        body1.set_data([r1[frame, <span class="dv">0</span>]], [r1[frame, <span class="dv">1</span>]])</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a>        body1.set_3d_properties([r1[frame, <span class="dv">2</span>]])</span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>        body2.set_data([r2[frame, <span class="dv">0</span>]], [r2[frame, <span class="dv">1</span>]])</span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>        body2.set_3d_properties([r2[frame, <span class="dv">2</span>]])</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        start <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        trail1.set_data(r1[start:frame, <span class="dv">0</span>], r1[start:frame, <span class="dv">1</span>])</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        trail1.set_3d_properties(r1[start:frame, <span class="dv">2</span>])</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        trail2.set_data(r2[start:frame, <span class="dv">0</span>], r2[start:frame, <span class="dv">1</span>])</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        trail2.set_3d_properties(r2[start:frame, <span class="dv">2</span>])</span>
 <span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4) Build 3-D video file --------------------------------------------------------</span></span>
-<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    ani <span class="op">=</span> FuncAnimation(fig, update,</span>
-<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>                        frames<span class="op">=</span><span class="bu">len</span>(t),</span>
-<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>                        init_func<span class="op">=</span>init,</span>
-<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>                        blit<span class="op">=</span><span class="va">True</span>,</span>
-<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>                        interval<span class="op">=</span><span class="dv">1000</span><span class="op">/</span> <span class="dv">240</span>)</span>
-<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    outfile <span class="op">=</span> <span class="st">"binary_3d.mp4"</span></span>
-<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    ani.save(outfile, writer<span class="op">=</span>FFMpegWriter(fps<span class="op">=</span><span class="dv">240</span>))</span>
-<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Saved equal-mass binary animation → </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>abspath(outfile)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (body1, body2, trail1, trail2)</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    <span class="co"># -----------------------------------------------------------</span></span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  Optional 3-D GIF of the relative orbit ------------------</span></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    <span class="co">#  (body 2 as seen from body 1) -----------------------------</span></span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>    <span class="co"># -----------------------------------------------------------</span></span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    fig3 <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">5</span>))</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>    ax3  <span class="op">=</span> fig3.add_subplot(<span class="dv">111</span>, projection<span class="op">=</span><span class="st">'3d'</span>)</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    lim  <span class="op">=</span> <span class="fl">1.05</span><span class="op">*</span>np.<span class="bu">abs</span>(r_rel).<span class="bu">max</span>()</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>    ax3.set_xlim(<span class="op">-</span>lim, lim)</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    ax3.set_ylim(<span class="op">-</span>lim, lim)</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>    ax3.set_zlim(<span class="op">-</span>lim, lim)</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    ax3.set_xlabel(<span class="st">'x [m]'</span>)</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>    ax3.set_ylabel(<span class="st">'y [m]'</span>)</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    ax3.set_zlabel(<span class="st">'z [m]'</span>)</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>    ax3.set_title(<span class="st">'Body 2 as seen from Body 1'</span>)</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    <span class="co"># body-1 (fixed)</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    body1_rel, <span class="op">=</span> ax3.plot([<span class="dv">0</span>], [<span class="dv">0</span>], [<span class="dv">0</span>], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'gold'</span>, markersize<span class="op">=</span><span class="dv">7</span>, label<span class="op">=</span><span class="st">'body-1'</span>)</span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    rel_pt,  <span class="op">=</span> ax3.plot([], [], [], <span class="st">'o'</span>, color<span class="op">=</span><span class="st">'tab:orange'</span>, markersize<span class="op">=</span><span class="dv">7</span>, label<span class="op">=</span><span class="st">'body-2'</span>)</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    rel_trail, <span class="op">=</span> ax3.plot([], [], [], <span class="st">'-'</span>, color<span class="op">=</span><span class="st">'tab:orange'</span>, lw<span class="op">=</span><span class="dv">1</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    ax3.legend()</span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> init_rel():</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>        rel_pt.set_data([], [])</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>        rel_pt.set_3d_properties([])</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>        rel_trail.set_data([], [])</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        rel_trail.set_3d_properties([])</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (body1_rel,rel_pt, rel_trail)</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update_rel(frame):</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        rel_pt.set_data([r_rel[frame, <span class="dv">0</span>]], [r_rel[frame, <span class="dv">1</span>]])</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>        rel_pt.set_3d_properties([r_rel[frame, <span class="dv">2</span>]])</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        start <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>        rel_trail.set_data(r_rel[start:frame, <span class="dv">0</span>], r_rel[start:frame, <span class="dv">1</span>])</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>        rel_trail.set_3d_properties(r_rel[start:frame, <span class="dv">2</span>])</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (body1_rel, rel_pt, rel_trail)</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4) Build 3-D video file in inertial frame --------------------------------------------------------</span></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    ani <span class="op">=</span> FuncAnimation(fig, update,</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>                        frames<span class="op">=</span><span class="bu">len</span>(t),</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>                        init_func<span class="op">=</span>init,</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>                        blit<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>                        interval<span class="op">=</span><span class="dv">1000</span><span class="op">/</span> <span class="dv">240</span>)</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    outfile <span class="op">=</span> <span class="st">"binary_3d.mp4"</span></span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    ani.save(outfile, writer<span class="op">=</span>FFMpegWriter(fps<span class="op">=</span><span class="dv">240</span>))</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Saved equal-mass binary animation → </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>abspath(outfile)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 5) Build 3-D video file in relative frame --------------------------------------------------------</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>    ani_rel <span class="op">=</span> FuncAnimation(fig3, update_rel,</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>                            frames<span class="op">=</span><span class="bu">len</span>(t),  </span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>                            init_func<span class="op">=</span>init_rel,</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>                            blit<span class="op">=</span><span class="va">True</span>,  </span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>                            interval<span class="op">=</span><span class="dv">1000</span><span class="op">/</span> <span class="dv">240</span>) </span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    outfile_rel <span class="op">=</span> <span class="st">"binary_rel_3d.mp4"</span></span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    ani_rel.save(outfile_rel, writer<span class="op">=</span>FFMpegWriter(fps<span class="op">=</span><span class="dv">240</span>))</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Saved relative orbit animation → </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>abspath(outfile_rel)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The output will be a video that shows the following:</p>
 </details>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="binary_3d_final.gif" class="img-fluid figure-img" width="700"></p>
-<figcaption>Simulation of Two body problem (A binary star system of two suns)</figcaption>
+<figcaption>Inertial reference frame</figcaption>
 </figure>
 </div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="binary_3d_final_rel.gif" width="350" height="350" class="figure-img"></p>
+<figcaption>Relative reference frame</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<!-- end columns -->
+
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">

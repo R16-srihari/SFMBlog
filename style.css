@@ -1,0 +1,23 @@
+.right-margin-callout {
+  float: right;
+  width: 25%;
+  margin-left: 1rem;
+  font-size: 0.9em;
+  background: #f9f9f9;
+  border-left: 3px solid #ddd;
+  padding: 0.5em;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  clear: right;
+}
+
+@media (max-width: 992px) {
+  .right-margin-callout {
+    float: none;
+    width: auto;
+    margin-left: 0;
+    box-shadow: none;
+    border-left: none;
+    background: transparent;
+    padding: 0;
+  }
+}

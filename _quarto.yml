@@ -20,6 +20,9 @@ format:
     theme:
       light: cosmo
       dark: darkly
+    toc: true
+    css: styles.css
+    math: mathjax
 
 jupyter: 
   kernelspec: 

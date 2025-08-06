@@ -8,7 +8,7 @@ Python 3.8+  (needs numpy, matplotlib)
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D   # noqa: F401 (needed for 3-D plots)
-from matplotlib.animation import FuncAnimation, FFMpegWriter, PillowWriter
+from matplotlib.animation import FuncAnimation, FFMpegWriter#, PillowWriter # (optional, for GIFs)
 import os
 # --------------------  physical constants  --------------------
 G = 6.67430e-11      # SI [m^3 kg^-1 s^-2]
@@ -177,6 +177,8 @@ if __name__ == "__main__":
     t  = data['t'] # time array
     r1 = data['r1'] # position of body 1
     r2 = data['r2'] # position of body 2
+    r_rel = r2 - r1  # relative position vector
+
 
     # 2) 3-D figure (unchanged) ----------------------------------------------
     fig = plt.figure(figsize=(7, 6))
@@ -227,7 +229,44 @@ if __name__ == "__main__":
 
         return (body1, body2, trail1, trail2)
 
-    # 4) Build 3-D video file --------------------------------------------------------
+    # -----------------------------------------------------------
+    #  Optional 3-D GIF of the relative orbit ------------------
+    #  (body 2 as seen from body 1) -----------------------------
+    # -----------------------------------------------------------
+    fig3 = plt.figure(figsize=(6,5))
+    ax3  = fig3.add_subplot(111, projection='3d')
+    lim  = 1.05*np.abs(r_rel).max()
+    ax3.set_xlim(-lim, lim)
+    ax3.set_ylim(-lim, lim)
+    ax3.set_zlim(-lim, lim)
+    ax3.set_xlabel('x [m]')
+    ax3.set_ylabel('y [m]')
+    ax3.set_zlabel('z [m]')
+    ax3.set_title('Body 2 as seen from Body 1')
+
+    # body-1 (fixed)
+    body1_rel, = ax3.plot([0], [0], [0], 'o', color='gold', markersize=7, label='body-1')
+    rel_pt,  = ax3.plot([], [], [], 'o', color='tab:orange', markersize=7, label='body-2')
+    rel_trail, = ax3.plot([], [], [], '-', color='tab:orange', lw=1, alpha=0.5)
+    ax3.legend()
+
+    def init_rel():
+        rel_pt.set_data([], [])
+        rel_pt.set_3d_properties([])
+        rel_trail.set_data([], [])
+        rel_trail.set_3d_properties([])
+        return (body1_rel,rel_pt, rel_trail)
+
+    def update_rel(frame):
+        rel_pt.set_data([r_rel[frame, 0]], [r_rel[frame, 1]])
+        rel_pt.set_3d_properties([r_rel[frame, 2]])
+        start = 0
+        rel_trail.set_data(r_rel[start:frame, 0], r_rel[start:frame, 1])
+        rel_trail.set_3d_properties(r_rel[start:frame, 2])
+        return (body1_rel, rel_pt, rel_trail)
+
+
+    # 4) Build 3-D video file in inertial frame --------------------------------------------------------
     ani = FuncAnimation(fig, update,
                         frames=len(t),
                         init_func=init,
@@ -239,5 +278,13 @@ if __name__ == "__main__":
     ani.save(outfile, writer=FFMpegWriter(fps=240))
     print(f"Saved equal-mass binary animation → {os.path.abspath(outfile)}")
     
+    # 5) Build 3-D video file in relative frame --------------------------------------------------------
+    ani_rel = FuncAnimation(fig3, update_rel,
+                            frames=len(t),  
+                            init_func=init_rel,
+                            blit=True,  
+                            interval=1000/ 240) 
+    outfile_rel = "binary_rel_3d.mp4"
+    ani_rel.save(outfile_rel, writer=FFMpegWriter(fps=240))
+    print(f"Saved relative orbit animation → {os.path.abspath(outfile_rel)}")
     
-    plt.show()

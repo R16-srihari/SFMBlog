@@ -50,7 +50,11 @@ $$
 \Rightarrow dA=\frac{1}{2} r(v \sin{\phi}) dt= \frac{1}{2} rv_{\perp} dt
 $$
 
-We know that $\vec{h}=rv_{\perp} \hat{h}$ , where $\vec{h}$ is the specific relative angular momentum of $m_2$ wrt $m_1$. Hence,
+We know that $\vec{h}=rv_{\perp} \hat{h}$ , where $\vec{h}$ is the specific relative angular momentum of $m_2$ wrt $m_1$.
+
+::: {.callout-note .side-note}
+Angular momentum is defined as: $$      \vec{H}=\vec{r}\times (m\vec{v})  $$ $$     \vec{h}=\vec{r}\times \vec{v}=rv\sin{\phi} \hat{h} $$ where $\phi$ is the angle between the position vector $\vec{r}$ and the velocity vector $\vec{v}$, and $\hat{h}=\hat{r}\times \hat{v}$ is the unit vector perpendicular to the plane of motion.
+:::
 
 $$
 \boxed{\frac{dA}{dt}=\frac{h}{2}= \text{a constant}}
@@ -82,7 +86,29 @@ This showed Newton that the acceleration required to keep a planet in orbit must
 
 To test the universality of this law, Newton compared the gravitational acceleration near Earth’s surface ( $a_E\approx 9.81 m/s^2$) with the centripetal acceleration needed to keep the Moon in its orbit using the following measurements to calculate the velocity in its orbit:
 
--   The Moon's distance from the Earth: about 60 Earth radii (or 384,400 km).
+-   The Moon's distance from the Earth: (calculated using parallax method) about 60 Earth radii (or 384,400 km).
+
+    ::: {.callout-note .side-note}
+    The **parallax method** determines the Moon’s distance by observing its apparent shift against background stars from two distant points on Earth. This angular difference, called the **parallax angle** (p), relates to the distance($D$) by:
+
+    $$
+    D=\frac{R_E}{\sin{p}}
+    $$
+
+    Where $R_E$ is the radius of the Earth (see below).
+    :::
+
+    ::: {#note-earthradius .callout-note .side-note}
+    #### Determination of Earth’s Radius
+
+    The Earth’s radius was first scientifically estimated by [**Eratosthenes**](https://mathshistory.st-andrews.ac.uk/Biographies/Eratosthenes/){#ref-erastothenes} **(\~240 BCE)**, who used the difference in the Sun’s angle between Syene and Alexandria at noon on the summer solstice. By measuring this angular difference (\~7.2°) and knowing the distance between the two cities, he calculated Earth’s circumference to be about 40,000 km, yielding a radius of approximately **6,370 km**.
+
+    By **Newton’s time**, more precise measurements came from land-based triangulation. In the 1670s, [**Jean Picard**](https://www.wikilifestory.in/2025/03/jean-picard.html?utm_source=chatgpt.com) used observations of a [meridian arc](https://rinconeducativo.org/en/recursos-educativos/jean-picard-first-give-exact-measurement-radius-earth/) near Paris to estimate Earth’s radius as **6,328 km**, which Newton used in his gravitational calculations.
+    :::
+
 -   And the orbital period was around 27.3 days.
 
-And he found: $\frac{a_E}{a_M}\approx \left(\frac{r_M}{r_E} \right)^2$ . This confirmed that the same law governed both falling of objects near Earth as well as orbiting moons.
+And he found:
+
+$$\frac{a_E}{a_M}\approx \left(\frac{r_M}{r_E}\right)^2
+$$ where $a_E$ is the acceleration of an object on Earth, $a_M$ the acceleration of the moon due to Earth, $r_M$ the distance of the Moon from the center of the Earth and $r_E$ the radius of Earth which is distance of the object on Earth from the center of the Earth. This confirmed that the same law governed both falling of objects near Earth as well as orbiting moons.

@@ -21,10 +21,10 @@ Kepler, building on [**Tycho Brahe**](https://en.wikipedia.org/wiki/Tycho_Brahe#
 -   **3rd Law**: The square of a planet’s orbital period is proportional to the cube of its semi-major axis.
 
     $$
-    T^2\propto r^3
+    T^2\propto a^3
     $$ {#eq-thirdlaw}
 
-    Where $T$ is the time period and $r$ is the distance as mentioned in @eq-newtonlaw .
+    Where $T$ is the time period and $a$ is the semi-major axis.
 
 Now we will see how each of the above laws helped Newton come to his conclusion.
 
@@ -35,10 +35,14 @@ Newton inferred that the force must be a **central force**—pointing toward the
 We know,
 
 $$
-\frac{dA}{dt}=\text{a constant}
+\frac{dA}{dt}=K
 $$
 
+where $K$ is a constant.
+
 ![Differential area **dA** swept out by the relative position vector $\vec{r}$ during time interval dt. [Fig. 2.9 @curtis2005orbital]](fig1_1.jpeg){width="416"}
+
+Here $m_1$ is the Sun and $m_2$ is the planet.
 
 Using the formula for area of triangle on the infinitesimal area **dA**, we get
 
@@ -57,29 +61,145 @@ Angular momentum is defined as: $$      \vec{H}=\vec{r}\times (m\vec{v})  $$ $$ 
 :::
 
 $$
-\boxed{\frac{dA}{dt}=\frac{h}{2}= \text{a constant}}
+\boxed{\frac{dA}{dt}=\frac{h}{2}=K}
 $$ {#eq-dadt}
 
-The above only happens if the torque about the Sun is zero, which in turn implies that the force has no component perpendicular to the radius vector. Therfore, the force must always point along the line joining the planet and the Sun, making it a central force.
+The angular momentum of $m_2$ wrt $m_1$ turns out to be a constant. This only happens if the torque about the Sun is zero, which in turn implies that the force has no component perpendicular to the radius vector. Therefore, the force must always point along the line joining the planet and the Sun, making it a central force.
 
 ## Derivation of the inverse-square relationship
 
-Starting with @eq-thirdlaw:
+We now work in polar coordinates for ease of derivation. For a particle moving under a central force:
 
 $$
-T^2 \propto r^3
+\vec{F} =m\vec a= m(\ddot{r} - r \dot{\theta}^2) \hat{r} + m(r \ddot{\theta} + 2\dot{r}\dot{\theta}) \hat{\theta}\qquad\text{(Newton's 2nd law)}
+$$
+
+::: {.callout-note .side-note}
+#### Key identities (time derivatives of unit vectors)
+
+$$
+\frac{d\hat r}{dt}=\dot\theta\,\hat\theta,\qquad
+\frac{d\hat\theta}{dt}=-\dot\theta\,\hat r,
+$$ {#eq-coordinate_deriv} following directly from differentiating the explicit Cartesian definitions of the unit vectors: $$
+\hat r = \cos\theta\,\hat\imath + \sin\theta\,\hat\jmath,\qquad
+\hat\theta = -\sin\theta\,\hat\imath + \cos\theta\,\hat\jmath.
+$$
+
+Using @eq-coordinate_deriv, we can compute $\ddot{\vec r}$ doing the following: $$
+\vec v=\dot{\vec r}=\frac{d}{dt} (r\hat r)
+$$
+
+Which gives,
+
+$$
+\vec v= \dot r\hat r+r\dot{\theta}\hat \theta
+$$ {#eq-vel}
+
+And, $$
+\vec a=\dot{\vec v}
+$$
+
+gives the above formulation of acceleration
+:::
+
+-   The $\hat{\theta}$-component is zero (since force is radial) such that angular momentum is conserved.
+
+-   The radial equation simplifies to:
+
+    $$
+    m\left( \ddot{r} - r \dot{\theta}^2 \right) = F(r)
+    $$ {#eq-radforce}
+
+Now, from Kepler's first law, we see that the orbit must be an ellipse with the Sun at one focus. Hence, the equation
+
+$$ r(\theta)=\frac{p}{1+e\cos{\theta}} $$ {#eq-ellipse}
+
+holds. Here $p$ is the semi latus-rectum, $e$ is the eccentricity of the ellipse orbit and $\theta$ is the angle between the line joining the focus to the point and line joining focus to the periapsis.
+
+We get a new variable $u$ where:
+
+$$
+u=\frac{1}{r}
+$$
+
+Then,
+
+$$
+\frac{dr}{d\theta}=-\frac{1}{u^2}\frac{du}{d\theta}
+$$
+
+::: {.callout-note .side-note}
+We know that specific angular momentum $(\vec h)$ is
+
+$$ \vec h= \vec r \times \vec v $$
+
+From $\vec r=r\hat r$ and $\vec v= \dot r\hat r+r\dot{\theta}\hat \theta$:
+
+$$ \vec h= \vec r \times \vec v = r\hat r \times \left(\dot r\hat r+r\dot{\theta}\hat \theta\right) = r^2\dot{\theta}\hat h $$
+
+Where $\hat h = \hat r \times \hat \theta$ is the unit vector perpendicular to the plane of motion. Implying,
+
+$$ h=r^2\dot \theta $$
+:::
+
+$$
+\dot r=\frac{dr}{dt}=\frac{dr}{d\theta}\frac{d\theta}{dt}=-\frac{1}{u^2}\frac{du}{d\theta}hu^2
 $$
 
 $$
-\Rightarrow \left(\frac{2\pi r}{v}\right)^2\propto r^3
+\boxed{\dot r=-h\frac{du}{d\theta}}
+$$
+
+Differentiating the above wrt $t$:
+
+$$
+\ddot r=-h\frac{d}{dt}\left(\frac{du}{d\theta}\right)=-h\dot \theta\frac{d^2u}{d\theta^2} 
+$$
+
+Again we substitute $\dot \theta=hu^2$ onto the above equation.
+
+$$
+\ddot r=-h^2u^2\frac{d^2u}{d\theta^2}
+$$ {#eq-rdoubledot}
+
+Substituting @eq-rdoubledot and $\dot \theta=hu^2$ onto @eq-radforce :
+
+$$
+-h^2 u^2 \frac{d^2 u}{d\theta^2} - \frac{1}{u} \cdot h^2 u^4 = \frac{F(r)}{m}
+$$ Simplify: $$
+-h^2 u^2 \frac{d^2 u}{d\theta^2} - h^2 u^3 = \frac{F(1/u)}{m}
+$$
+
+Multiply both sides by $-\frac{1}{h^2 u^2}$:
+
+$$
+\frac{d^2 u}{d\theta^2} + u = -\frac{F(1/u)}{m h^2 u^2}
+$$ {#eq-binet}
+
+Now, substituting $u=\frac{1}{r}$ onto @eq-ellipse gives:
+
+$$
+u=\frac{1}{p}+\frac{e}{p} \cos{\theta}
 $$
 
 $$
-v^2\propto \frac{1}{r}
+\Rightarrow \frac{du}{d\theta}=-\frac{e}{p}\sin \theta\quad\text{and}\quad\frac{d^2u}{d\theta^2}=-\frac{e}{p}\cos \theta
+$$
+
+Using the above on @eq-binet we get:
+
+$$
+\frac{1}{p}+\frac{e}{p} \cos{\theta}-\frac{e}{p} \cos{\theta}=-\frac{F(1/u)}{m h^2 u^2}
+$$
+
+And putting back $u=\frac{1}{r}$,
+
+$$
+\vec F(r)=-\frac{mh^2}{pr^2}
 $$
 
 $$
-\Rightarrow a \text{(acceleration)}=\frac{v^2}{r}\propto \frac{1}{r^2}
+\Rightarrow \vec F \propto \frac{1}{r^2}
 $$
 
 This showed Newton that the acceleration required to keep a planet in orbit must follow an inverse-square law.
@@ -89,6 +209,8 @@ To test the universality of this law, Newton compared the gravitational accelera
 -   The Moon's distance from the Earth: (calculated using parallax method) about 60 Earth radii (or 384,400 km).
 
     ::: {.callout-note .side-note}
+    #### Parallax Method
+
     The **parallax method** determines the Moon’s distance by observing its apparent shift against background stars from two distant points on Earth. This angular difference, called the **parallax angle** (p), relates to the distance($D$) by:
 
     $$
@@ -106,7 +228,7 @@ To test the universality of this law, Newton compared the gravitational accelera
     By **Newton’s time**, more precise measurements came from land-based triangulation. In the 1670s, [**Jean Picard**](https://www.wikilifestory.in/2025/03/jean-picard.html?utm_source=chatgpt.com) used observations of a [meridian arc](https://rinconeducativo.org/en/recursos-educativos/jean-picard-first-give-exact-measurement-radius-earth/) near Paris to estimate Earth’s radius as **6,328 km**, which Newton used in his gravitational calculations.
     :::
 
--   And the orbital period was around 27.3 days.
+-   And its orbital period was around 27.3 days.
 
 And he found:
 

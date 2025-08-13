@@ -88,6 +88,8 @@ $$
 
 And using the identity $\vec r \cdot \dot{\vec r}=r\dot r$, we get:
 
+$$  \vec r\times(\vec r\times\dot{\vec r})= (r\dot r)\vec r - r^{2}\dot{\vec r}  $$ {#eq-rcrossrcrossrdot}
+
 ::: {.callout-note .side-note}
 #### $\vec r \cdot \dot{\vec r}=r\dot r$
 
@@ -102,10 +104,6 @@ Hence:$$
 \boxed{\vec r\cdot\dot{\vec r}=r\dot r}
 $$
 :::
-
-$$ 
-\vec r\times(\vec r\times\dot{\vec r})= (r\dot r)\vec r - r^{2}\dot{\vec r} 
-$$ {#eq-rcrossrcrossrdot}
 
 Inserting @eq-rcrossrcrossrdot into @eq-init :
 

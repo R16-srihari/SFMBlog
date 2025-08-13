@@ -452,12 +452,12 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig2_1.jpeg" class="img-fluid figure-img" width="253"></p>
-<figcaption>Diagram of two masses in an inertial frame <em>OXYZ</em> (Fig.2.1(a) <span class="citation" data-cites="curtis2005orbital">Curtis (<a href="references.html#ref-curtis2005orbital" role="doc-biblioref">2005</a>)</span>)</figcaption>
+<figcaption>Diagram of two masses in an inertial frame <em>OXYZ</em> (Fig.2.1(a) <span class="citation" data-cites="curtis2005orbital">Curtis (<a href="#ref-curtis2005orbital" role="doc-biblioref">2005</a>)</span>)</figcaption>
 </figure>
 </div>
 <section id="derivation-of-the-relative-equation-of-motion" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="derivation-of-the-relative-equation-of-motion"><span class="header-section-number">2.1.1</span> Derivation of the relative equation of motion</h3>
-<p>Substituting <a href="#eq-f12" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> and <a href="#eq-f21" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> to <span class="math inline">\(\vec{r}= \vec{R}_2-\vec{R}_1\)</span>:</p>
+<p>Substituting <a href="#eq-f12" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-f12</span></a> and <a href="#eq-f21" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-f21</span></a> to <span class="math inline">\(\vec{r}= \vec{R}_2-\vec{R}_1\)</span>:</p>
 <p><span class="math inline">\(\ddot{\vec{r}}= -G\frac{m_1 m_2}{r^3}\vec{r}\left(\frac{1}{m_2}+\frac{1}{m_1}\right)= -G \frac{m_1+m_2}{r^3} \vec{r}\)</span></p>
 <p>Let the gravitational 𝜇 parameter be defined as:</p>
 <p><span class="math display">\[
@@ -471,7 +471,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 <section id="motion-of-center-of-mass" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="motion-of-center-of-mass"><span class="header-section-number">2.1.2</span> Motion of Center of Mass</h3>
 <p>The center of mass vector is: <span class="math inline">\(\vec{R}_G=\frac{m_1\vec{R}_1+m_2\vec{R}_2}{m_1+m_2}\)</span></p>
-<p>Using <a href="#eq-f12" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> and <a href="#eq-f21" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> :</p>
+<p>Using <a href="#eq-f12" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-f12</span></a> and <a href="#eq-f21" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-f21</span></a> :</p>
 <p><span id="eq-com"><span class="math display">\[
 \ddot{\vec{R}}_G= \frac{m_1\ddot{\vec{R}}_1+m_2\ddot{\vec{R}}_2}{m_1+m_2}
 \tag{2.4}\]</span></span></p>
@@ -495,7 +495,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 <p><span class="math display">\[
 \frac{d\vec{h}}{dt}=\dot{\vec{r}}\times\dot{\vec{r}}+ \vec{r}\times \ddot{\vec{r}}
 \]</span></p>
-<p>From the <a href="#eq-relmotion" class="quarto-xref">Equation&nbsp;<span>2.3</span></a>, we see that <span class="math inline">\(\ddot{\vec{r}} \parallel \vec{r}\)</span> . Hence <span class="math inline">\(\frac{d\vec{h}}{dt}=0 \Rightarrow \vec{h}\)</span> is conserved.</p>
+<p>From the <a href="#eq-relmotion" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-relmotion</span></a>, we see that <span class="math inline">\(\ddot{\vec{r}} \parallel \vec{r}\)</span> . Hence <span class="math inline">\(\frac{d\vec{h}}{dt}=0 \Rightarrow \vec{h}\)</span> is conserved.</p>
 <section id="eccentricity-of-orbit-from-laplace-runge-lenz-vector" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="eccentricity-of-orbit-from-laplace-runge-lenz-vector"><span class="header-section-number">2.2.1</span> Eccentricity of orbit from Laplace-Runge-Lenz vector</h3>
 <p>Differentiating <span class="math inline">\(\dot {\vec r} \times \vec h\)</span>:</p>
@@ -507,6 +507,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 \vec r\times(\vec r\times\dot{\vec r})= (\vec r\cdot\dot{\vec r})\vec r - r^{2}\dot{\vec r}
 \]</span></p>
 <p>And using the identity <span class="math inline">\(\vec r \cdot \dot{\vec r}=r\dot r\)</span>, we get:</p>
+<p><span id="eq-rcrossrcrossrdot"><span class="math display">\[  \vec r\times(\vec r\times\dot{\vec r})= (r\dot r)\vec r - r^{2}\dot{\vec r}   \tag{2.6}\]</span></span></p>
 <div class="side-note callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -526,10 +527,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 \]</span></p>
 </div>
 </div>
-<p><span id="eq-rcrossrcrossrdot"><span class="math display">\[
-\vec r\times(\vec r\times\dot{\vec r})= (r\dot r)\vec r - r^{2}\dot{\vec r}
-\tag{2.6}\]</span></span></p>
-<p>Inserting <a href="#eq-rcrossrcrossrdot" class="quarto-xref">Equation&nbsp;<span>2.6</span></a> into <a href="#eq-init" class="quarto-xref">Equation&nbsp;<span>2.5</span></a> :</p>
+<p>Inserting <a href="#eq-rcrossrcrossrdot" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-rcrossrcrossrdot</span></a> into <a href="#eq-init" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-init</span></a> :</p>
 <p><span id="eq-six"><span class="math display">\[
 \frac{d}{dt}(\dot{\vec r}\times \vec h)=- \frac{\mu}{r^3}\left[(r \dot{r})\vec r - r^2 \dot{\vec r}\right]=-\mu \left[\frac{\dot r \vec r-r\dot{\vec{r}}}{r^2}\right]
 \tag{2.7}\]</span></span></p>
@@ -537,7 +535,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 <p><span class="math display">\[
 \frac{d}{dt}\left(\frac{\vec r}{r}\right)= \frac{r\dot{\vec r}-\dot r\vec r}{r^2}=-\frac{\dot r\vec r-r\dot{\vec{r}}}{r^2}
 \]</span></p>
-<p>substituting the above into <a href="#eq-six" class="quarto-xref">Equation&nbsp;<span>2.7</span></a>;</p>
+<p>substituting the above into <a href="#eq-six" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-six</span></a>;</p>
 <p><span class="math display">\[
 \frac{d}{dt}\left(\dot{\vec r}\times \vec h\right)= \frac{d}{dt}\left(\mu\frac{\vec r}{r}\right)
 \]</span></p>
@@ -550,7 +548,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 </section>
 <section id="orbit-equation-trajectory-under-gravity" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="orbit-equation-trajectory-under-gravity"><span class="header-section-number">2.3</span> Orbit Equation (Trajectory Under Gravity)</h2>
-<p><a href="#eq-eccvector" class="quarto-xref">Equation&nbsp;<span>2.8</span></a> is the vector equation that represents the orbit of one of the bodies wrt the other in the two body problem. In order to obtain the scalar form, we take a dot product with <span class="math inline">\(\vec r\)</span>:</p>
+<p><a href="#eq-eccvector" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-eccvector</span></a> is the vector equation that represents the orbit of one of the bodies wrt the other in the two body problem. In order to obtain the scalar form, we take a dot product with <span class="math inline">\(\vec r\)</span>:</p>
 <p><span class="math display">\[
 \frac{1}{\mu}(\dot{\vec{r}}\times \vec h)\cdot \vec r-\frac{\vec r\cdot \vec r}{r}=\vec e\cdot \vec r
 \]</span></p>
@@ -564,7 +562,7 @@ m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="fig2_2.jpeg" class="img-fluid figure-img" width="231"></p>
-<figcaption>The true anomaly <span class="math inline">\(\theta\)</span> is the angle between the eccentricity vector <span class="math inline">\(\vec{e}\)</span> and the position vector <span class="math inline">\(\vec{r}\)</span> (See Fig. 2.10 <span class="citation" data-cites="curtis2005orbital">Curtis (<a href="references.html#ref-curtis2005orbital" role="doc-biblioref">2005</a>)</span>)</figcaption>
+<figcaption>The true anomaly <span class="math inline">\(\theta\)</span> is the angle between the eccentricity vector <span class="math inline">\(\vec{e}\)</span> and the position vector <span class="math inline">\(\vec{r}\)</span> (See Fig. 2.10 <span class="citation" data-cites="curtis2005orbital">Curtis (<a href="#ref-curtis2005orbital" role="doc-biblioref">2005</a>)</span>)</figcaption>
 </figure>
 </div>
 <p>Hence the final equation of orbit will turn out to be as follows:</p>
@@ -884,7 +882,7 @@ Click to view the code
 
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-curtis2005orbital" class="csl-entry" role="listitem">
 Curtis, H. D. 2005. <em>Orbital Mechanics: For Engineering Students</em>. Aerospace Engineering. Elsevier Science. <a href="https://books.google.co.in/books?id=nEO7lAEACAAJ">https://books.google.co.in/books?id=nEO7lAEACAAJ</a>.
 </div>

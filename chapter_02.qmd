@@ -67,7 +67,7 @@ $$
 On calculating the time derivative:
 
 $$
-\frac{d\vec{h}}{dt}=\dot{\vec{r}}\times\dot{\vec{r}}+ \vec{r}\times \ddot{\vec{r}}
+\frac{d\vec{h}}{dt}=\underbrace{\dot{\vec{r}}\times\dot{\vec{r}}}_{0}+ \vec{r}\times \ddot{\vec{r}}
 $$
 
 From the @eq-relmotion, we see that $\ddot{\vec{r}} \parallel \vec{r}$ . Hence $\frac{d\vec{h}}{dt}=0 \Rightarrow \vec{h}$ is conserved.

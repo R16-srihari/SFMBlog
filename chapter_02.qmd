@@ -467,3 +467,37 @@ The output will be a video that shows the following:
 :::::
 
 <!-- end columns -->
+
+## The Energy Law
+
+By taking the cross product of @eq-relmotion with the specific relative angular momentum per unit mass h, we were led to the vector equation @eq-eccvector, from which we obtained the orbit formula. Now we will see what we will get when we take dot product of @eq-relmotion with the relative velocity $\dot{\vec r}$.
+
+$$ \ddot{\vec{r}}.\dot{\vec{r}}=-\mu\frac{\vec r.\dot{\vec{r}}}{r^3} $$
+
+Now the left side:
+
+$$ \dot{\vec r}\cdot\ddot{\vec r} = \frac{d}{dt}\!\left(\tfrac12\dot{\vec r}\cdot\dot{\vec r}\right) = \frac{d}{dt}\!\left(\tfrac12 v^2\right), $$
+
+where $v=\|\dot{\vec r}\|$ is the relative speed.
+
+Right side:
+
+$$ \dot{\vec r}\cdot\left(-\mu\frac{\vec r}{r^3}\right) = -\mu\,\frac{\vec r\cdot\dot{\vec r}}{r^3}. $$
+
+But note
+
+$$ \frac{d}{dt}\!\left(\frac{1}{r}\right) = -\frac{\vec r\cdot\dot{\vec r}}{r^3}, $$
+
+so the right side equals $\mu\,\dfrac{d}{dt}(1/r)$ with a minus sign handled:
+
+Putting these together:
+
+$$ \frac{d}{dt}\!\left(\tfrac12 v^2\right) = \mu\,\frac{d}{dt}\!\left(\frac{1}{r}\right). $$
+
+Rearrange to get a time derivative of a single quantity:
+
+$$ \frac{d}{dt}\!\left(\tfrac12 v^2 - \frac{\mu}{r}\right) = 0. $$
+
+Therefore the quantity in parentheses is constant in time. Define the **specific mechanical energy** (energy per unit reduced mass, equivalently per unit mass in the relative problem)
+
+$$ \boxed{\displaystyle \frac{v^2}{2} - \frac{\mu}{r} \;=\; \varepsilon\quad\text{(a constant)}} $$

@@ -413,6 +413,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#orbit-equation-trajectory-under-gravity" id="toc-orbit-equation-trajectory-under-gravity" class="nav-link" data-scroll-target="#orbit-equation-trajectory-under-gravity"><span class="header-section-number">2.3</span> Orbit Equation (Trajectory Under Gravity)</a></li>
   <li><a href="#two-body-problem-simulation" id="toc-two-body-problem-simulation" class="nav-link" data-scroll-target="#two-body-problem-simulation"><span class="header-section-number">2.4</span> Two body problem simulation</a></li>
+  <li><a href="#the-energy-law" id="toc-the-energy-law" class="nav-link" data-scroll-target="#the-energy-law"><span class="header-section-number">2.5</span> The Energy Law</a></li>
   </ul>
 </nav>
     </div>
@@ -879,6 +880,25 @@ Click to view the code
 </div>
 </div>
 <!-- end columns -->
+</section>
+<section id="the-energy-law" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="the-energy-law"><span class="header-section-number">2.5</span> The Energy Law</h2>
+<p>By taking the cross product of <a href="#eq-relmotion" class="quarto-xref">Equation&nbsp;<span>2.3</span></a> with the specific relative angular momentum per unit mass h, we were led to the vector equation <a href="#eq-eccvector" class="quarto-xref">Equation&nbsp;<span>2.8</span></a>, from which we obtained the orbit formula. Now we will see what we will get when we take dot product of <a href="#eq-relmotion" class="quarto-xref">Equation&nbsp;<span>2.3</span></a> with the relative velocity <span class="math inline">\(\dot{\vec r}\)</span>.</p>
+<p><span class="math display">\[ \ddot{\vec{r}}.\dot{\vec{r}}=-\mu\frac{\vec r.\dot{\vec{r}}}{r^3} \]</span></p>
+<p>Now the left side:</p>
+<p><span class="math display">\[ \dot{\vec r}\cdot\ddot{\vec r} = \frac{d}{dt}\!\left(\tfrac12\dot{\vec r}\cdot\dot{\vec r}\right) = \frac{d}{dt}\!\left(\tfrac12 v^2\right), \]</span></p>
+<p>where <span class="math inline">\(v=\|\dot{\vec r}\|\)</span> is the relative speed.</p>
+<p>Right side:</p>
+<p><span class="math display">\[ \dot{\vec r}\cdot\left(-\mu\frac{\vec r}{r^3}\right) = -\mu\,\frac{\vec r\cdot\dot{\vec r}}{r^3}. \]</span></p>
+<p>But note</p>
+<p><span class="math display">\[ \frac{d}{dt}\!\left(\frac{1}{r}\right) = -\frac{\vec r\cdot\dot{\vec r}}{r^3}, \]</span></p>
+<p>so the right side equals <span class="math inline">\(\mu\,\dfrac{d}{dt}(1/r)\)</span> with a minus sign handled:</p>
+<p>Putting these together:</p>
+<p><span class="math display">\[ \frac{d}{dt}\!\left(\tfrac12 v^2\right) = \mu\,\frac{d}{dt}\!\left(\frac{1}{r}\right). \]</span></p>
+<p>Rearrange to get a time derivative of a single quantity:</p>
+<p><span class="math display">\[ \frac{d}{dt}\!\left(\tfrac12 v^2 - \frac{\mu}{r}\right) = 0. \]</span></p>
+<p>Therefore the quantity in parentheses is constant in time. Define the <strong>specific mechanical energy</strong> (energy per unit reduced mass, equivalently per unit mass in the relative problem)</p>
+<p><span class="math display">\[ \boxed{\displaystyle \frac{v^2}{2} - \frac{\mu}{r} \;=\; \varepsilon\quad\text{(a constant)}} \]</span></p>
 
 
 

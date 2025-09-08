@@ -128,7 +128,7 @@ $$
 \frac{dr}{d\theta}=-\frac{1}{u^2}\frac{du}{d\theta}
 $$
 
-::: {.callout-note .side-note}
+::: {#callout-angmom_scalar .callout-note .side-note}
 We know that specific angular momentum $(\vec h)$ is
 
 $$ \vec h= \vec r \times \vec v $$

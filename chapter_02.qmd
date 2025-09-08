@@ -149,13 +149,13 @@ $$
 \frac{h^2}{\mu}-r=re\cos{\theta} \text{ where } \theta \text{ is the true anomaly angle }
 $$
 
-![The true anomaly $\theta$ is the angle between the eccentricity vector $\vec{e}$ and the position vector $\vec{r}$ (See Fig. 2.10 @curtis2005orbital)](fig2_2.jpeg){width="231"}
+![The true anomaly $\theta$ is the angle between the eccentricity vector $\vec{e}$ and the position vector $\vec{r}$ (See Fig. 2.10 @curtis2005orbital)](fig2_2.jpeg){#fig-theta width="231"}
 
 Hence the final equation of orbit will turn out to be as follows:
 
 $$
 \boxed{r=\frac{\frac{h^2}{\mu}}{1+e\cos{\theta}}}
-$$
+$$ {#eq-rpos}
 
 ## Two body problem simulation
 

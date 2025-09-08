@@ -1,1 +1,51 @@
-#
+# Position as a function of time
+
+In the previous chapter we found the relationship between orbital position ($\vec r$) and true anomaly ($\theta$) for the two-body problem. But for any meaningful analysis of the orbital motion one would need position as a function of time. For this, we start from the conservation of angular momentum , which we can write as:
+
+$$
+h=r^2\dot \theta
+$$
+
+(From @callout-angmom_scalar). Then,
+
+$$
+\frac{d\theta}{dt}=\frac{h}{r^2}
+$$
+
+Integrating from perigee position, we get;
+
+$$
+\int_0^\theta \,d\theta=\int_{t_p}^t \frac{h}{r^2} \,dt
+$$
+
+Where the true anomaly at perigee is fixed as 0, since eccentricity vector is along the perigee direction from the focus (see @fig-theta for explanation) and time of passing the perigee is taken as $t_p$.
+
+## Case 1: Circular Orbits (e=0)
+
+In case of circular orbits, $\dot \theta$ is a constant since r is a constant. Hence,
+
+$$
+\theta (t)=\frac{h}{r^2}(t-t_p)
+$$
+
+If the object in question passes perigee at $t_p=0$, and use @eq-rpos then the equation becomes:
+
+$$
+\theta (t)=\frac{h}{\left(\frac{h^2}{\mu}\right)^2}t=\frac{\mu^2}{h^3}t
+$$
+
+## Case 2: Elliptical orbits (0\<e\<1)
+
+Using @eq-rpos and $t_p=0$ ,
+
+$$ \int_0^\theta \,d\theta=\int_{0}^t \frac{h}{\left(\frac{h^2}{\mu}\right)^2}(1+e\cos{\theta})^2 \,dt $$
+
+$$
+\int_0^t \frac{\mu^2}{h^3}\,dt=\int_0^\theta \frac{d\theta}{(1+e\cos{\theta})^2}
+$$
+
+Here we can find from integral tables that:
+
+$$
+\int_0^\theta \frac{d\theta}{(1+e\cos{\theta})^2}= \frac{1}{(1-e^2)^{\frac{3}{2}}}\left[2\tan^{-1}{\left(\sqrt{\frac{1-e}{1+e}}\tan{\frac{\theta}{2}}\right)}-\frac{e\sqrt{1-e^2}}{1+e\cos{\theta}}\sin{\theta}\right]
+$$

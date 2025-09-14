@@ -5,4 +5,5 @@ This book aims to provide a comprehensive guide to the Keplerian model of orbita
 ## Current chapters
 
 -   **Chapter 1:** Introduces Newton's Laws of gravitation and an appreciation of the work behind the derivation of the law
--   **Chapter 2:** Derivation of equations of motion in a two-body problem, introduces us to eccentricity of orbit, and derives the orbit equation.
+-   **Chapter 2:** Derivation of equations of motion in a two-body problem, introduces us to eccentricity of orbit, derives the orbit equation in parametric form, forming the basis of Keplerian orbits. Also introduces us to the vis-viva equation.
+-   **Chapter 3:(WIP)** Derives the time dependence of the orbital motion, introducing us to Kepler's equation and the eccentric anomaly.

@@ -157,6 +157,8 @@ $$
 \boxed{r=\frac{\frac{h^2}{\mu}}{1+e\cos{\theta}}}
 $$ {#eq-rpos}
 
+The above equation is similar to the parametric equation of a conic of eccentricity $e$ : $$r=\frac{a(1-e^2)}{1+e\cos{\theta}}$$
+
 ## Two body problem simulation
 
 Below is a simulation of the two body problem with an example: a binary star system of two Suns whose masses are equal.
@@ -500,4 +502,56 @@ $$ \frac{d}{dt}\!\left(\tfrac12 v^2 - \frac{\mu}{r}\right) = 0. $$
 
 Therefore the quantity in parentheses is constant in time. Define the **specific mechanical energy** (energy per unit reduced mass, equivalently per unit mass in the relative problem)
 
-$$ \boxed{\displaystyle \frac{v^2}{2} - \frac{\mu}{r} \;=\; \varepsilon\quad\text{(a constant)}} $$
+$$ \frac{v^2}{2} - \frac{\mu}{r} =\; \varepsilon\quad\text{(a constant)} $$
+
+At the perigee of an elliptical orbit, $\vec r_p \perp \vec v_p$. Also,
+
+$$
+r_p=a(1-e)
+$$
+
+And,
+
+$$
+l\text{ (semi-latus rectum) }=a(1-e^2)=\frac{h^2}{\mu}
+$$
+
+$$
+h_p=|\vec r \times \vec v|_p=r_pv_p
+$$
+
+Hence,
+
+$$
+a(1-e^2)=\frac{r_p^2v_p^2}{\mu}
+$$
+
+$$
+a(1-e^2)=\frac{a^2(1-e)^2v_p^2}{\mu}
+$$
+
+On simplification,
+
+$$
+v_p^2=\frac{\mu(1+e)}{a(1-e)}
+$$
+
+Substituting the above back into the specific mechanical energy equation:
+
+$$
+\varepsilon\;=\frac{\mu(1+e)}{2a(1-e)}-\frac{\mu}{a(1-e)}
+$$
+
+We get,
+
+$$
+\varepsilon = -\frac{\mu}{2a}
+$$
+
+Hence the energy equation becomes,
+
+$$
+\frac{v^2}{2} - \frac{\mu}{r} = -\frac{\mu}{2a}
+$$
+
+This is called the **vis-viva** equation.

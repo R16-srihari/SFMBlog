@@ -419,7 +419,10 @@ window.Quarto = {
   </ul></li>
   <li><a href="#orbit-equation-trajectory-under-gravity" id="toc-orbit-equation-trajectory-under-gravity" class="nav-link" data-scroll-target="#orbit-equation-trajectory-under-gravity"><span class="header-section-number">2.3</span> Orbit Equation (Trajectory Under Gravity)</a></li>
   <li><a href="#two-body-problem-simulation" id="toc-two-body-problem-simulation" class="nav-link" data-scroll-target="#two-body-problem-simulation"><span class="header-section-number">2.4</span> Two body problem simulation</a></li>
-  <li><a href="#the-energy-law" id="toc-the-energy-law" class="nav-link" data-scroll-target="#the-energy-law"><span class="header-section-number">2.5</span> The Energy Law</a></li>
+  <li><a href="#the-energy-law" id="toc-the-energy-law" class="nav-link" data-scroll-target="#the-energy-law"><span class="header-section-number">2.5</span> The Energy Law</a>
+  <ul class="collapse">
+  <li><a href="#specific-mechanical-energy" id="toc-specific-mechanical-energy" class="nav-link" data-scroll-target="#specific-mechanical-energy"><span class="header-section-number">2.5.1</span> Specific mechanical energy</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -910,41 +913,32 @@ Click to view the code
 <p><span class="math display">\[ \frac{d}{dt}\!\left(\tfrac12 v^2 - \frac{\mu}{r}\right) = 0. \]</span></p>
 <p>Therefore the quantity in parentheses is constant in time. Define the <strong>specific mechanical energy</strong> (energy per unit reduced mass, equivalently per unit mass in the relative problem)</p>
 <p><span class="math display">\[ \frac{v^2}{2} - \frac{\mu}{r} =\; \varepsilon\quad\text{(a constant)} \]</span></p>
-<p>At the perigee of an elliptical orbit, <span class="math inline">\(\vec r_p \perp \vec v_p\)</span>. Also,</p>
+<p>This is called the <strong>vis-viva</strong> equation.</p>
+<section id="specific-mechanical-energy" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="specific-mechanical-energy"><span class="header-section-number">2.5.1</span> Specific mechanical energy</h3>
+<p>At the periapsis <span class="math inline">\(\vec r_p \perp \vec v_p\)</span>. Also,</p>
 <p><span class="math display">\[
-r_p=a(1-e)
+r_p=\frac{h^2}{\mu}\frac{1}{1+e}
 \]</span></p>
 <p>And,</p>
 <p><span class="math display">\[
-l\text{ (semi-latus rectum) }=a(1-e^2)=\frac{h^2}{\mu}
+h_p=|\vec r \times \vec v|_p=r_pv_p
 \]</span></p>
 <p><span class="math display">\[
-h_p=|\vec r \times \vec v|_p=r_pv_p
+v_p=\frac{h_p}{r_p}
+\]</span></p>
+<p>Now,</p>
+<p><span class="math display">\[
+\varepsilon=\varepsilon_p= \frac{v_p^2}{2} - \frac{\mu}{r_p}
 \]</span></p>
 <p>Hence,</p>
 <p><span class="math display">\[
-a(1-e^2)=\frac{r_p^2v_p^2}{\mu}
+\varepsilon= \frac{h_p^2}{2r_p^2}-\frac{\mu}{r_p}
 \]</span></p>
-<p><span class="math display">\[
-a(1-e^2)=\frac{a^2(1-e)^2v_p^2}{\mu}
-\]</span></p>
-<p>On simplification,</p>
-<p><span class="math display">\[
-v_p^2=\frac{\mu(1+e)}{a(1-e)}
-\]</span></p>
-<p>Substituting the above back into the specific mechanical energy equation:</p>
-<p><span class="math display">\[
-\varepsilon\;=\frac{\mu(1+e)}{2a(1-e)}-\frac{\mu}{a(1-e)}
-\]</span></p>
-<p>We get,</p>
-<p><span class="math display">\[
-\varepsilon = -\frac{\mu}{2a}
-\]</span></p>
-<p>Hence the energy equation becomes,</p>
-<p><span class="math display">\[
-\frac{v^2}{2} - \frac{\mu}{r} = -\frac{\mu}{2a}
-\]</span></p>
-<p>This is called the <strong>vis-viva</strong> equation.</p>
+<p>Substituting <span class="math inline">\(r_p\)</span> in the above equation will give</p>
+<p><span id="eq-spmechenergy"><span class="math display">\[
+\varepsilon=-\frac{1}{2}\frac{\mu^2}{h^2}(1-e^2)
+\tag{2.10}\]</span></span></p>
 
 
 
@@ -953,6 +947,7 @@ v_p^2=\frac{\mu(1+e)}{a(1-e)}
 Curtis, H. D. 2005. <em>Orbital Mechanics: For Engineering Students</em>. Aerospace Engineering. Elsevier Science. <a href="https://books.google.co.in/books?id=nEO7lAEACAAJ">https://books.google.co.in/books?id=nEO7lAEACAAJ</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -504,54 +504,40 @@ Therefore the quantity in parentheses is constant in time. Define the **specific
 
 $$ \frac{v^2}{2} - \frac{\mu}{r} =\; \varepsilon\quad\text{(a constant)} $$
 
-At the perigee of an elliptical orbit, $\vec r_p \perp \vec v_p$. Also,
+This is called the **vis-viva** equation.
+
+### Specific mechanical energy
+
+At the periapsis $\vec r_p \perp \vec v_p$. Also,
 
 $$
-r_p=a(1-e)
+r_p=\frac{h^2}{\mu}\frac{1}{1+e}
 $$
 
 And,
 
 $$
-l\text{ (semi-latus rectum) }=a(1-e^2)=\frac{h^2}{\mu}
+h_p=|\vec r \times \vec v|_p=r_pv_p
 $$
 
 $$
-h_p=|\vec r \times \vec v|_p=r_pv_p
+v_p=\frac{h_p}{r_p}
+$$
+
+Now,
+
+$$
+\varepsilon=\varepsilon_p= \frac{v_p^2}{2} - \frac{\mu}{r_p} 
 $$
 
 Hence,
 
 $$
-a(1-e^2)=\frac{r_p^2v_p^2}{\mu}
+\varepsilon= \frac{h_p^2}{2r_p^2}-\frac{\mu}{r_p}
 $$
 
-$$
-a(1-e^2)=\frac{a^2(1-e)^2v_p^2}{\mu}
-$$
-
-On simplification,
+Substituting $r_p$ in the above equation will give
 
 $$
-v_p^2=\frac{\mu(1+e)}{a(1-e)}
-$$
-
-Substituting the above back into the specific mechanical energy equation:
-
-$$
-\varepsilon\;=\frac{\mu(1+e)}{2a(1-e)}-\frac{\mu}{a(1-e)}
-$$
-
-We get,
-
-$$
-\varepsilon = -\frac{\mu}{2a}
-$$
-
-Hence the energy equation becomes,
-
-$$
-\frac{v^2}{2} - \frac{\mu}{r} = -\frac{\mu}{2a}
-$$
-
-This is called the **vis-viva** equation.
+\varepsilon=-\frac{1}{2}\frac{\mu^2}{h^2}(1-e^2)
+$$ {#eq-spmechenergy}

@@ -21,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -355,6 +375,12 @@ window.Quarto = {
   <ul>
   <li><a href="#case-1-circular-orbits-e0" id="toc-case-1-circular-orbits-e0" class="nav-link active" data-scroll-target="#case-1-circular-orbits-e0"><span class="header-section-number">3.1</span> Case 1: Circular Orbits (e=0)</a></li>
   <li><a href="#case-2-elliptical-orbits-0e1" id="toc-case-2-elliptical-orbits-0e1" class="nav-link" data-scroll-target="#case-2-elliptical-orbits-0e1"><span class="header-section-number">3.2</span> Case 2: Elliptical orbits (0&lt;e&lt;1)</a></li>
+  <li><a href="#keplerian-geometrical-derivation" id="toc-keplerian-geometrical-derivation" class="nav-link" data-scroll-target="#keplerian-geometrical-derivation"><span class="header-section-number">3.3</span> Keplerian geometrical derivation</a>
+  <ul class="collapse">
+  <li><a href="#keplers-reason-for-eccentric-anomaly" id="toc-keplers-reason-for-eccentric-anomaly" class="nav-link" data-scroll-target="#keplers-reason-for-eccentric-anomaly"><span class="header-section-number">3.3.1</span> Kepler’s reason for eccentric anomaly</a></li>
+  <li><a href="#calculation-of-the-swept-out-area" id="toc-calculation-of-the-swept-out-area" class="nav-link" data-scroll-target="#calculation-of-the-swept-out-area"><span class="header-section-number">3.3.2</span> Calculation of the swept out area</a></li>
+  <li><a href="#connecting-eccentric-anomaly-to-mean-anomaly" id="toc-connecting-eccentric-anomaly-to-mean-anomaly" class="nav-link" data-scroll-target="#connecting-eccentric-anomaly-to-mean-anomaly"><span class="header-section-number">3.3.3</span> Connecting eccentric anomaly to mean anomaly</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -385,7 +411,7 @@ window.Quarto = {
 <p><span class="math display">\[
 h=r^2\dot \theta
 \]</span></p>
-<p>(From @ ). Then,</p>
+<p>Then,</p>
 <p><span class="math display">\[
 \frac{d\theta}{dt}=\frac{h}{r^2}
 \]</span></p>
@@ -400,7 +426,7 @@ h=r^2\dot \theta
 <p><span class="math display">\[
 \theta (t)=\frac{h}{r^2}(t-t_p)
 \]</span></p>
-<p>If the object in question passes perigee( because a circle is symmetric about any diameter, you can choose any radius line as the apse-line) at <span class="math inline">\(t_p=0\)</span>, and use <a href="chapter_02.html#eq-rpos" class="quarto-xref">Equation&nbsp;<span>2.9</span></a> then the equation becomes:</p>
+<p>If the object in question passes perigee( because a circle is symmetric about any diameter, you can choose any radius line as the apse-line) at <span class="math inline">\(t_p=0\)</span>, and use <a href="chapter_02.html#eq-rpos" class="quarto-xref">Equation&nbsp;<span>2.9</span></a> with <span class="math inline">\(e=0\)</span> then the equation becomes:</p>
 <p><span class="math display">\[
 \theta (t)=\frac{h}{\left(\frac{h^2}{\mu}\right)^2}t=\frac{\mu^2}{h^3}t
 \]</span></p>
@@ -420,14 +446,126 @@ h=r^2\dot \theta
 <p><span class="math display">\[
 \frac{\mu^2}{h^3}t=\frac{1}{(1-e^2)^{3/2}}\left[2\tan^{-1}{\left(\sqrt{\frac{1-e}{1+e}}\tan{\frac{\theta}{2}}\right)}-\frac{e\sqrt{1-e^2}}{1+e\cos{\theta}}\sin{\theta}\right]
 \]</span></p>
-<p>We now introduce the quantity of mean anomaly, given by:</p>
-<p><span class="math display">\[
+<p>We now introduce the quantity of <strong>mean anomaly</strong>, given by:</p>
+<p><span id="eq-meananomaly"><span class="math display">\[
 M_e=(1-e)^{3/2}\frac{\mu^2}{h^3}t
+\tag{3.1}\]</span></span></p>
+<p>which gives,</p>
+<p><span id="eq-metheta"><span class="math display">\[
+M_e=2\tan^{-1}{\left(\sqrt{\frac{1-e}{1+e}}\tan{\frac{\theta}{2}}\right)}-\frac{e\sqrt{1-e^2}}{1+e\cos{\theta}}\sin{\theta}
+\tag{3.2}\]</span></span></p>
+<p>Mean anomaly can be described of as the orbital position of a fictitious second body that moves in a circular orbit around the 1st body with the same time period as the second body in our two-body system.</p>
+<p><span id="eq-meananomaly2"><span class="math display">\[
+M_e=\frac{2\pi}{T}t
+\tag{3.3}\]</span></span></p>
+<p>where <span class="math inline">\(T\)</span> is the time period of the orbit.</p>
+<div id="fig-3_1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="fig3_1.jpeg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Ellipse and its Auxiliary circle (Fig. 3.3 <span class="citation" data-cites="curtis2005orbital">Curtis (<a href="references.html#ref-curtis2005orbital" role="doc-biblioref">2005</a>)</span>)
+</figcaption>
+</figure>
+</div>
+<p>We will see that it becomes convenient to simplify <a href="#eq-metheta" class="quarto-xref">Equation&nbsp;<span>3.2</span></a> by introducing an auxiliary angle <span class="math inline">\(E\)</span> called the eccentric anomaly, which is done by circumscribing the ellipse with a concentric auxiliary circle having radius equal to the semi-major axis <span class="math inline">\(a\)</span> of the ellipse. (Shown in <a href="#fig-3_1" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>). Where <span class="math inline">\(S\)</span> is the current position with true anomaly <span class="math inline">\(\theta\)</span> and <span class="math inline">\(Q\)</span> is the projected point onto the auxiliary circle.</p>
+<p>From the figure, we can observe that <span class="math inline">\(\overline{OV}=a\cos E\)</span> in terms of eccentric anomaly while <span class="math inline">\(\overline{OV}= ae + r\cos \theta\)</span> in terms of true anomaly. Thus,</p>
+<p><span class="math display">\[
+a\cos E=ae + r\cos \theta
 \]</span></p>
-<p>This is the orbital position of a fictitious second body that moves in a circular orbit around the 1st body with the same time period</p>
+<p>Using the parametric equation of ellipse <a href="chapter_01.html#eq-ellipse" class="quarto-xref">Equation&nbsp;<span>1.7</span></a> with the semi-latus rectum <span class="math inline">\(p=a(1-e^2)\)</span>, we can write this as</p>
+<p><span class="math display">\[
+a\cos E=ae + \frac{a(1-e^2)}{1+e\cos \theta}\cos \theta
+\]</span></p>
+<p>On simplification,</p>
+<p><span id="eq-cosE"><span class="math display">\[
+\cos E = \frac{e+\cos \theta}{1+ e\cos \theta}
+\tag{3.4}\]</span></span></p>
+<p>Using <span class="math inline">\(\cos^2 E + \sin^2 E=1\)</span>;</p>
+<p><span id="eq-sinE"><span class="math display">\[
+\sin E= \frac{ \sqrt{1-e^2} \sin \theta}{1+e\cos \theta}
+\tag{3.5}\]</span></span></p>
+<p>While using either of <a href="#eq-cosE" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> or <a href="#eq-sinE" class="quarto-xref">Equation&nbsp;<span>3.5</span></a> is fine for obtaining <span class="math inline">\(E\)</span> from <span class="math inline">\(\theta\)</span>, however, given a value of <span class="math inline">\(\cos E/\sin E\)</span> between -1 and 1. there are two values of <span class="math inline">\(E \in [0,2\pi]\)</span>. To resolve the quadrant ambiguity, one is forced to check the other equation. Instead of that, we can use the following:</p>
+<p><span class="math display">\[
+\tan^2 \frac{E}{2} = \frac{\sin^2 \frac{E}{2}}{\cos^2 \frac{E}{2}}= \frac{1-\cos E}{1+\cos E}
+\]</span></p>
+<p>And using <a href="#eq-cosE" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> on numerator and denominator,</p>
+<p><span class="math display">\[
+1-\cos E=1-\frac{e+\cos \theta}{1+ e\cos \theta}=\frac{(1-e)(1-\cos \theta)}{1+ e\cos \theta}
+\]</span></p>
+<p><span class="math display">\[
+1+\cos E= 1+\frac{e+\cos \theta}{1+ e\cos \theta}=\frac{(1+e)(1+\cos \theta)}{1+ e\cos \theta}
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+\tan^2 \frac{E}{2} = \frac{1-\cos E}{1+\cos E}= \frac{(1-e)(1-\cos \theta)}{(1+e)(1+\cos \theta)}=\frac{1-e}{1+e} \tan^2 \frac{\theta}{2}
+\]</span></p>
+<p><span id="eq-tane/2"><span class="math display">\[
+\boxed{\tan \frac{E}{2}=\sqrt{\frac{1-e}{1+e}}\tan \frac{\theta}{2}}
+\tag{3.6}\]</span></span></p>
+<p>Using <a href="#eq-tane/2" class="quarto-xref">Equation&nbsp;<span>3.6</span></a> and <a href="#eq-sinE" class="quarto-xref">Equation&nbsp;<span>3.5</span></a> on <a href="#eq-metheta" class="quarto-xref">Equation&nbsp;<span>3.2</span></a></p>
+<p><span class="math display">\[
+M_e=2\tan^{-1}{\left(\sqrt{\frac{1-e}{1+e}}\tan{\frac{\theta}{2}}\right)}-\frac{e\sqrt{1-e^2}}{1+e\cos{\theta}}\sin{\theta}
+\]</span></p>
+<p>we get,</p>
+<p><span id="eq-keplereq"><span class="math display">\[
+\boxed{M_e= E-\sin E}
+\tag{3.7}\]</span></span></p>
+<p>This is known as the <strong>Kepler’s equation</strong>.Now, given the time-period (<span class="math inline">\(T\)</span>), eccentricity (<span class="math inline">\(e\)</span>) and the true anomaly(<span class="math inline">\(\theta\)</span>) position of an object in orbit, we will:</p>
+<ol type="1">
+<li><p>find <span class="math inline">\(E=2\tan^{-1}{\left(\sqrt{\frac{1-e}{1+e}}\tan \frac{f}{2}\right)}\)</span></p></li>
+<li><p>Solve Kepler’s equation to get <span class="math inline">\(M_e\)</span></p></li>
+<li><p>get the time since the previous perigee passing from <a href="#eq-meananomaly" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> .</p></li>
+</ol>
+<p>Now looking back at history, we would see that Kepler derived this equation way before Newton formulated the principles of calculus. One could ask how he derived this relationship between two quantities that had not much of a physical significance before. This is the question that we will try to answer in the following section.</p>
+</section>
+<section id="keplerian-geometrical-derivation" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="keplerian-geometrical-derivation"><span class="header-section-number">3.3</span> Keplerian geometrical derivation</h2>
+<p>Kepler knew from his <em>Second Law</em> (equal areas in equal times) that time must be proportional to the area swept out by the radius vector. Which implies,</p>
+<p><span id="eq-aoft"><span class="math display">\[
+\frac{A(t)}{\pi ab}=\frac{t}{T}
+\tag{3.8}\]</span></span></p>
+<section id="keplers-reason-for-eccentric-anomaly" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="keplers-reason-for-eccentric-anomaly"><span class="header-section-number">3.3.1</span> Kepler’s reason for eccentric anomaly</h3>
+<p>It’s difficult to measure the swept area directly in an ellipse. Instead, Kepler mapped point <span class="math inline">\(P\)</span> on the ellipse to point <span class="math inline">\(Q\)</span> on the auxiliary circle. He then used the circle’s geometry to calculate areas. So if we can express <span class="math inline">\(A(E)\)</span> as a function of <span class="math inline">\(E\)</span>, we can connect time <span class="math inline">\(t\)</span> to its position.</p>
+</section>
+<section id="calculation-of-the-swept-out-area" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="calculation-of-the-swept-out-area"><span class="header-section-number">3.3.2</span> Calculation of the swept out area</h3>
+<p>In <a href="#fig-3_1" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>, the area swept out by the radius vector <span class="math inline">\(FP\)</span> from periapsis <span class="math inline">\(A\)</span> to the body <span class="math inline">\(P\)</span> (the shaded region <span class="math inline">\(AFP\)</span>) is what Kepler’s Second Law refers to. This area <span class="math inline">\(A(E)\)</span> can be obtained by relating it to easier-to-compute parts:</p>
+<ol type="1">
+<li><p><strong>Sector</strong> <span class="math inline">\(AOQ\)</span> in the circle: Its area is <span class="math inline">\(\tfrac{1}{2}a^2 E\)</span>.</p></li>
+<li><p><strong>Ellipse correction</strong>: Since the ellipse is “squashed” vertically by a factor <span class="math inline">\(b/a\)</span>, the corresponding ellipse area is scaled: <span class="math inline">\(\tfrac{1}{2}ab E\)</span>.</p></li>
+<li><p><strong>Shift from center</strong> <span class="math inline">\(O\)</span> to focus <span class="math inline">\(F\)</span>: The ellipse area computed above is referenced to the center, not the focus. To correct, subtract the triangular area <span class="math inline">\(FQS\)</span>. That triangle has area: <span class="math inline">\(\tfrac{1}{2}ab e \sin E\)</span>.</p></li>
+</ol>
+<p>So the true area from periapsis to <span class="math inline">\(P\)</span> is:</p>
+<p><span class="math display">\[
+A(E) = \frac{ab}{2} \left( E - e \sin E \right).
+\]</span></p>
+</section>
+<section id="connecting-eccentric-anomaly-to-mean-anomaly" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="connecting-eccentric-anomaly-to-mean-anomaly"><span class="header-section-number">3.3.3</span> Connecting eccentric anomaly to mean anomaly</h3>
+<p>Now using both <a href="#eq-aoft" class="quarto-xref">Equation&nbsp;<span>3.8</span></a> and <a href="#eq-meananomaly2" class="quarto-xref">Equation&nbsp;<span>3.3</span></a>, and let <span class="math inline">\(E\)</span> be the eccentric anomaly of the orbiting body at time <span class="math inline">\(t\)</span>. Hence,</p>
+<p><span class="math display">\[
+A(t)=\frac{ab}{2}(E-e\sin E)=\frac{\pi ab}{T}t
+\]</span></p>
+<p>And,</p>
+<p><span class="math display">\[
+M=\frac{2\pi}{T}t
+\]</span></p>
+<p>We get,<span class="math display">\[
+M = \frac{2\pi}{T}t = E - e\sin E.
+\]</span></p>
+<p>This is exactly the same as <a href="#eq-keplereq" class="quarto-xref">Equation&nbsp;<span>3.7</span></a>.</p>
 
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-curtis2005orbital" class="csl-entry" role="listitem">
+Curtis, H. D. 2005. <em>Orbital Mechanics: For Engineering Students</em>. Aerospace Engineering. Elsevier Science. <a href="https://books.google.co.in/books?id=nEO7lAEACAAJ">https://books.google.co.in/books?id=nEO7lAEACAAJ</a>.
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -64,7 +64,7 @@
     "href": "chapter_02.html",
     "title": "2  Two Body Problem",
     "section": "",
-    "text": "2.1 Equations of Motion for the Two body problem\nLet \\(\\vec{R}_1\\) and \\(\\vec{R}_2\\) denote the position vectors of masses \\(m_1\\) and \\(m_2\\) in an inertial reference frame. According to Newton’s Second Law and the law of gravitation:\n\\[\nm_1\\ddot{\\vec{R}}_1=-G\\frac{m_1 m_2}{r^3} \\vec{r}\n\\tag{2.1}\\]\n\\[\nm_2\\ddot{\\vec{R}}_2=G\\frac{m_1 m_2}{r^3} \\vec{r}\n\\tag{2.2}\\]\nwhere \\(\\vec{r}= \\vec{R}_2-\\vec{R}_1\\) the relative position vector between the two masses.",
+    "text": "2.1 Equations of Motion for the Two body problem\nLet \\(\\vec{R}_1\\) and \\(\\vec{R}_2\\) denote the position vectors of masses \\(m_1\\) and \\(m_2\\) in an inertial reference frame. According to Newton’s Second Law and the law of gravitation:\n\\[\nm_1\\ddot{\\vec{R}}_1=G\\frac{m_1 m_2}{r^3} \\vec{r}\n\\tag{2.1}\\]\n\\[\nm_2\\ddot{\\vec{R}}_2=-G\\frac{m_1 m_2}{r^3} \\vec{r}\n\\tag{2.2}\\]\nwhere \\(\\vec{r}= \\vec{R}_2-\\vec{R}_1\\) the relative position vector between the two masses.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Two Body Problem</span>"
     ]

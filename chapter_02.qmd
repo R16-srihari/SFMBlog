@@ -5,11 +5,11 @@
 Let $\vec{R}_1$ and $\vec{R}_2$ denote the position vectors of masses $m_1$ and $m_2$ in an inertial reference frame. According to Newton’s Second Law and the law of gravitation:
 
 $$
-m_1\ddot{\vec{R}}_1=-G\frac{m_1 m_2}{r^3} \vec{r} 
+m_1\ddot{\vec{R}}_1=G\frac{m_1 m_2}{r^3} \vec{r} 
 $$ {#eq-f12}
 
 $$
-m_2\ddot{\vec{R}}_2=G\frac{m_1 m_2}{r^3} \vec{r}
+m_2\ddot{\vec{R}}_2=-G\frac{m_1 m_2}{r^3} \vec{r}
 $$ {#eq-f21}
 
 where $\vec{r}= \vec{R}_2-\vec{R}_1$ the relative position vector between the two masses.

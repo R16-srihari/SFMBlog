@@ -6,6 +6,7 @@ book:
   author: "Srihari S"
   date: today
   description: "A comprehensive guide to the Keplerian model of orbital mechanics"
+  site-url: "https://r16-srihari.github.io/SFMBlog/"
   chapters:
     - index.qmd
     - chapter_01.qmd
@@ -24,6 +25,9 @@ format:
     toc: true
     css: styles.css
     math: mathjax
+    include-in-header:
+      text: |
+        <meta name="google-site-verification" content="MCk5f4Lkma09627S2qhkS07vq25tc0tIy83siJ33GFE" />
 
 jupyter: 
   kernelspec: 

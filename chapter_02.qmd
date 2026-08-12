@@ -88,21 +88,32 @@ $$
 
 And using the identity $\vec r \cdot \dot{\vec r}=r\dot r$, we get:
 
-$$  \vec r\times(\vec r\times\dot{\vec r})= (r\dot r)\vec r - r^{2}\dot{\vec r}  $$ {#eq-rcrossrcrossrdot}
+$$  
+\vec r\times(\vec r\times\dot{\vec r})= (r\dot r)\vec r - r^{2}\dot{\vec r} 
+$$ {#eq-rcrossrcrossrdot}
 
 ::: {.callout-note .side-note}
 #### $\vec r \cdot \dot{\vec r}=r\dot r$
 
 We know that:$$\vec r \cdot\vec r=r^2$$
 
-Then:$$\frac{d}{dt}(\vec r\cdot \vec r)=2r\frac{dr}{dt}=2r\dot r
+Then:
+
+$$
+\frac{d}{dt}(\vec r\cdot \vec r)=2r\frac{dr}{dt}=2r\dot r
 $$
 
-But,$$\frac{d}{dt}(\vec r \cdot \vec r)=\vec r\cdot \frac{d\vec r}{dt}+\frac{d\vec r}{dt}\cdot \vec r=2\vec r\cdot \frac{d\vec r}{dt}=2\vec r\cdot \dot{\vec r}$$
+But,
 
-Hence:$$
+$$
+\frac{d}{dt}(\vec r \cdot \vec r)=\vec r\cdot \frac{d\vec r}{dt}+\frac{d\vec r}{dt}\cdot \vec r=2\vec r\cdot \frac{d\vec r}{dt}=2\vec r\cdot \dot{\vec r}
+$$
+
+Hence:
+$$
 \boxed{\vec r\cdot\dot{\vec r}=r\dot r}
 $$
+
 :::
 
 Inserting @eq-rcrossrcrossrdot into @eq-init :
